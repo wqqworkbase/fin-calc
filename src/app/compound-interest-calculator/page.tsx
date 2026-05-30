@@ -48,7 +48,7 @@ export default function CompoundInterestCalculator() {
               type="number"
               value={initialPrincipal}
               onChange={(e) => setInitialPrincipal(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
             />
           </div>
           <div>
@@ -57,7 +57,7 @@ export default function CompoundInterestCalculator() {
               type="number"
               value={monthlyContribution}
               onChange={(e) => setMonthlyContribution(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
             />
           </div>
           <div>
@@ -67,7 +67,7 @@ export default function CompoundInterestCalculator() {
               value={annualRate}
               onChange={(e) => setAnnualRate(Number(e.target.value) || 0)}
               step="0.1"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
             />
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -77,7 +77,7 @@ export default function CompoundInterestCalculator() {
                 type="number"
                 value={years}
                 onChange={(e) => setYears(Number(e.target.value) || 1)}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
               />
             </div>
             <div>
@@ -85,7 +85,7 @@ export default function CompoundInterestCalculator() {
               <select
                 value={compoundFrequency}
                 onChange={(e) => setCompoundFrequency(Number(e.target.value))}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
               >
                 {COMPOUND_FREQUENCIES.map((f) => (
                   <option key={f.value} value={f.value}>{f.label}</option>
@@ -96,9 +96,9 @@ export default function CompoundInterestCalculator() {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-blue-50 rounded-lg p-4">
-            <p className="text-sm text-blue-600 mb-1">Final Balance</p>
-            <p className="text-2xl font-bold text-blue-900">${result.finalBalance.toLocaleString()}</p>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-sm text-emerald-600 mb-1">Final Balance</p>
+            <p className="text-2xl font-bold text-gray-900">${result.finalBalance.toLocaleString()}</p>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-gray-50 rounded-lg p-3">

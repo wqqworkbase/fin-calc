@@ -46,7 +46,7 @@ export default function CDLadderCalculator() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Total Investment ($)</label>
               <input type="number" value={totalAmount} onChange={(e) => setTotalAmount(Number(e.target.value) || 0)}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">APY for Each CD Term (%)</label>
@@ -59,7 +59,7 @@ export default function CDLadderCalculator() {
                       value={apys[term.label] ?? ''}
                       onChange={(e) => updateApy(term.label, Number(e.target.value) || 0)}
                       step="0.01"
-                      className="flex-1 border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="flex-1 border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
                     />
                     <span className="text-xs text-gray-400">%</span>
                   </div>

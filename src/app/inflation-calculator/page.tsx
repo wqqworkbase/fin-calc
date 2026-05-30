@@ -35,20 +35,20 @@ export default function InflationCalculator() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Amount ($)</label>
             <input type="number" value={amount} onChange={(e) => setAmount(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">From Year</label>
               <select value={fromYear} onChange={(e) => setFromYear(Number(e.target.value))}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
                 {years.map((y) => <option key={y} value={y}>{y}</option>)}
               </select>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">To Year</label>
               <select value={toYear} onChange={(e) => setToYear(Number(e.target.value))}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
                 {years.map((y) => <option key={y} value={y}>{y}</option>)}
               </select>
             </div>
@@ -58,9 +58,9 @@ export default function InflationCalculator() {
         <div className="space-y-4">
           {result ? (
             <>
-              <div className="bg-blue-50 rounded-lg p-4">
-                <p className="text-sm text-blue-600 mb-1">${amount.toLocaleString()} in {fromYear} equals</p>
-                <p className="text-2xl font-bold text-blue-900">${result.adjustedValue.toLocaleString()} in {toYear}</p>
+              <div className="bg-gray-50 rounded-lg p-4">
+                <p className="text-sm text-emerald-600 mb-1">${amount.toLocaleString()} in {fromYear} equals</p>
+                <p className="text-2xl font-bold text-gray-900">${result.adjustedValue.toLocaleString()} in {toYear}</p>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-gray-50 rounded-lg p-3">

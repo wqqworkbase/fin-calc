@@ -34,22 +34,22 @@ export default function SavingsGoalCalculator() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Target Amount ($)</label>
             <input type="number" value={targetAmount} onChange={(e) => setTargetAmount(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Years to Reach Goal</label>
             <input type="number" value={years} onChange={(e) => setYears(Number(e.target.value) || 1)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Current Savings ($)</label>
             <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Expected Annual Return (%)</label>
             <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(Number(e.target.value) || 0)} step="0.1"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
         </div>
 
@@ -57,13 +57,13 @@ export default function SavingsGoalCalculator() {
           <FinancialCard label="Required Monthly Contribution" value={result.monthlyRequired} />
 
           <div className="grid grid-cols-2 gap-3">
-            <div className="bg-gray-50 rounded-lg p-3">
-              <p className="text-xs text-gray-500">Total You Will Contribute</p>
-              <FormattedAmount value={result.totalContributions} size="md" className="text-gray-900" />
+            <div className="bg-gray-50 rounded-xl p-3">
+              <p className="text-xs text-gray-400">Total You Will Contribute</p>
+              <FormattedAmount value={result.totalContributions} size="md" className="text-gray-800" />
             </div>
-            <div className="bg-green-50 rounded-lg p-3">
-              <p className="text-xs text-green-600">Interest Earned</p>
-              <FormattedAmount value={result.totalInterest} size="md" className="text-green-700" />
+            <div className="bg-emerald-50 rounded-xl p-3">
+              <p className="text-xs text-emerald-500">Interest Earned</p>
+              <FormattedAmount value={result.totalInterest} size="md" className="text-emerald-700" />
             </div>
           </div>
 

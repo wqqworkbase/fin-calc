@@ -47,23 +47,23 @@ export default function LoanAmortizationCalculator() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Loan Amount ($)</label>
               <input type="number" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value) || 0)}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
               <input type="number" value={annualRate} onChange={(e) => setAnnualRate(Number(e.target.value) || 0)} step="0.01"
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Term (years)</label>
                 <input type="number" value={termYears} onChange={(e) => setTermYears(Number(e.target.value) || 1)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Payment Frequency</label>
                 <select value={paymentsPerYear} onChange={(e) => setPaymentsPerYear(Number(e.target.value))}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
                   <option value={12}>Monthly (12/year)</option>
                   <option value={26}>Biweekly (26/year)</option>
                 </select>
@@ -72,7 +72,7 @@ export default function LoanAmortizationCalculator() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Extra Payment per Period ($)</label>
               <input type="number" value={extraPayment} onChange={(e) => setExtraPayment(Number(e.target.value) || 0)}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
           </div>
 
@@ -80,12 +80,12 @@ export default function LoanAmortizationCalculator() {
             <FinancialCard label="Monthly Payment" value={result.payment} />
 
             <div className="grid grid-cols-2 gap-3">
-              <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-gray-500">Total Paid</p>
-                <FormattedAmount value={result.totalPayments} size="md" className="text-gray-900" />
+              <div className="bg-gray-50 rounded-xl p-3">
+                <p className="text-xs text-gray-400">Total Paid</p>
+                <FormattedAmount value={result.totalPayments} size="md" className="text-gray-800" />
               </div>
-              <div className="bg-red-50 rounded-lg p-3">
-                <p className="text-xs text-red-600">Total Interest</p>
+              <div className="bg-red-50 rounded-xl p-3">
+                <p className="text-xs text-red-500">Total Interest</p>
                 <FormattedAmount value={result.totalInterest} size="md" className="text-red-700" />
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function LoanAmortizationCalculator() {
         </div>
 
         <details>
-          <summary className="text-sm font-medium text-gray-700 cursor-pointer hover:text-blue-600">
+          <summary className="text-sm font-medium text-gray-700 cursor-pointer hover:text-emerald-600">
             View Amortization Schedule (first & last 12 payments)
           </summary>
           <div className="mt-3 overflow-x-auto">

@@ -97,9 +97,9 @@ export default function USTaxCalculator() {
   }, label?: string) => (
     <div className="space-y-3">
       {result.grossIncome !== undefined && (
-        <div className="bg-blue-50 rounded-lg p-4">
-          <p className="text-sm text-blue-600 mb-1">Required Gross Income</p>
-          <p className="text-2xl font-bold text-blue-900">${result.grossIncome.toLocaleString()}</p>
+        <div className="bg-gray-50 rounded-lg p-4">
+          <p className="text-sm text-emerald-600 mb-1">Required Gross Income</p>
+          <p className="text-2xl font-bold text-gray-900">${result.grossIncome.toLocaleString()}</p>
         </div>
       )}
       <div className="bg-green-50 rounded-lg p-3">
@@ -192,7 +192,7 @@ export default function USTaxCalculator() {
           <button
             onClick={() => setMode('forward')}
             className={`flex-1 py-2 rounded-md text-sm font-medium transition ${
-              mode === 'forward' ? 'bg-white shadow text-blue-600' : 'text-gray-500'
+              mode === 'forward' ? 'bg-white shadow text-emerald-600' : 'text-gray-500'
             }`}
           >
             Forward: Income Tax
@@ -200,7 +200,7 @@ export default function USTaxCalculator() {
           <button
             onClick={() => setMode('reverse')}
             className={`flex-1 py-2 rounded-md text-sm font-medium transition ${
-              mode === 'reverse' ? 'bg-white shadow text-blue-600' : 'text-gray-500'
+              mode === 'reverse' ? 'bg-white shadow text-emerald-600' : 'text-gray-500'
             }`}
           >
             Reverse: Target Take-Home
@@ -216,7 +216,7 @@ export default function USTaxCalculator() {
                   type="number"
                   value={income}
                   onChange={(e) => setIncome(Number(e.target.value) || 0)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
                 />
               </div>
             ) : (
@@ -226,7 +226,7 @@ export default function USTaxCalculator() {
                   type="number"
                   value={targetAfterTax}
                   onChange={(e) => setTargetAfterTax(Number(e.target.value) || 0)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
                 />
               </div>
             )}
@@ -236,7 +236,7 @@ export default function USTaxCalculator() {
               <select
                 value={filingStatus}
                 onChange={(e) => setFilingStatus(e.target.value as FilingStatus)}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
               >
                 {Object.entries(FILING_STATUS_LABELS).map(([k, v]) => (
                   <option key={k} value={k}>{v}</option>
@@ -253,7 +253,7 @@ export default function USTaxCalculator() {
                     setStateCode(e.target.value);
                     setSelectedCity('');
                   }}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
                 >
                   {ALL_STATES.map((s) => (
                     <option key={s} value={s}>{s}</option>
@@ -265,7 +265,7 @@ export default function USTaxCalculator() {
                 <select
                   value={taxYear}
                   onChange={(e) => setTaxYear(Number(e.target.value))}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
                 >
                   <option value={2025}>2025</option>
                   <option value={2026}>2026</option>
@@ -279,7 +279,7 @@ export default function USTaxCalculator() {
                 <select
                   value={selectedCity}
                   onChange={(e) => setSelectedCity(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
                 >
                   <option value="">— None —</option>
                   {localJurisdictions.map((j) => (

@@ -47,68 +47,68 @@ export default function RetirementSavingsCalculator() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Current Age</label>
               <input type="number" value={currentAge} onChange={(e) => setCurrentAge(Number(e.target.value) || 0)}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Retirement Age</label>
               <input type="number" value={retirementAge} onChange={(e) => setRetirementAge(Number(e.target.value) || 0)}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Current Savings ($)</label>
             <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Contribution ($)</label>
             <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Expected Annual Return (%)</label>
             <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(Number(e.target.value) || 0)} step="0.1"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Annual Retirement Spending ($)</label>
             <input type="number" value={annualRetirementSpend} onChange={(e) => setAnnualRetirementSpend(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Life Expectancy (age)</label>
             <input type="number" value={lifeExpectancy} onChange={(e) => setLifeExpectancy(Number(e.target.value) || 0)}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
         </div>
 
         <div className="space-y-4">
           <FinancialCard label={`Balance at Age ${retirementAge}`} value={result.retirementBalance} />
 
-          <div className={`rounded-lg p-4 ${result.isSufficient ? 'bg-green-50' : 'bg-red-50'}`}>
-            <p className={`text-sm mb-1 ${result.isSufficient ? 'text-green-600' : 'text-red-600'}`}>Status</p>
-            <p className={`text-lg font-semibold ${result.isSufficient ? 'text-green-700' : 'text-red-700'}`}>
+          <div className={`rounded-xl p-4 ${result.isSufficient ? 'bg-emerald-50' : 'bg-red-50'}`}>
+            <p className={`text-sm mb-1 ${result.isSufficient ? 'text-emerald-600' : 'text-red-600'}`}>Status</p>
+            <p className={`text-lg font-semibold ${result.isSufficient ? 'text-emerald-700' : 'text-red-700'}`}>
               {result.isSufficient
                 ? `On Track — savings last ${result.yearsOfRetirement} years in retirement`
                 : `Shortfall: $${result.shortfall.toLocaleString()}`}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <div className="bg-gray-50 rounded-lg p-3">
-              <p className="text-xs text-gray-500">Total Contributions</p>
-              <FormattedAmount value={result.totalContributions} size="md" className="text-gray-900" />
+            <div className="bg-gray-50 rounded-xl p-3">
+              <p className="text-xs text-gray-400">Total Contributions</p>
+              <FormattedAmount value={result.totalContributions} size="md" className="text-gray-800" />
             </div>
-            <div className="bg-green-50 rounded-lg p-3">
-              <p className="text-xs text-green-600">Total Interest</p>
-              <FormattedAmount value={result.totalInterest} size="md" className="text-green-700" />
+            <div className="bg-emerald-50 rounded-xl p-3">
+              <p className="text-xs text-emerald-500">Total Interest</p>
+              <FormattedAmount value={result.totalInterest} size="md" className="text-emerald-700" />
             </div>
-            <div className="bg-gray-50 rounded-lg p-3">
-              <p className="text-xs text-gray-500">Monthly Income (est.)</p>
-              <FormattedAmount value={result.monthlyRetirementIncome} size="md" className="text-gray-900" />
+            <div className="bg-gray-50 rounded-xl p-3">
+              <p className="text-xs text-gray-400">Monthly Income (est.)</p>
+              <FormattedAmount value={result.monthlyRetirementIncome} size="md" className="text-gray-800" />
             </div>
-            <div className="bg-yellow-50 rounded-lg p-3">
-              <p className="text-xs text-yellow-600">Recommended Monthly</p>
-              <FormattedAmount value={result.recommendedMonthlyContribution} size="md" className="text-yellow-700" />
+            <div className="bg-amber-50 rounded-xl p-3">
+              <p className="text-xs text-amber-500">Recommended Monthly</p>
+              <FormattedAmount value={result.recommendedMonthlyContribution} size="md" className="text-amber-700" />
             </div>
           </div>
         </div>

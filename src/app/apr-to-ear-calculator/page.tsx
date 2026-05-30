@@ -29,12 +29,12 @@ export default function AprToEarCalculator() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">APR (Nominal Rate) %</label>
             <input type="number" value={apr} onChange={(e) => setApr(Number(e.target.value) || 0)} step="0.01"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Compounding Frequency</label>
             <select value={compoundFrequency} onChange={(e) => setCompoundFrequency(Number(e.target.value))}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
               <option value={365}>Daily (365/year)</option>
               <option value={12}>Monthly (12/year)</option>
               <option value={4}>Quarterly (4/year)</option>
@@ -47,9 +47,9 @@ export default function AprToEarCalculator() {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-blue-50 rounded-lg p-4">
-            <p className="text-sm text-blue-600 mb-1">Effective Annual Rate (EAR)</p>
-            <p className="text-2xl font-bold text-blue-900">{(ear * 100).toFixed(4)}%</p>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-sm text-emerald-600 mb-1">Effective Annual Rate (EAR)</p>
+            <p className="text-2xl font-bold text-gray-900">{(ear * 100).toFixed(4)}%</p>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-gray-50 rounded-lg p-3">
@@ -65,7 +65,7 @@ export default function AprToEarCalculator() {
             <p className="text-xs text-gray-500 mb-1">On a $10,000 balance for 1 year</p>
             <p className="text-sm">
               Interest at APR: <span className="font-semibold">${(10000 * apr / 100).toFixed(2)}</span><br />
-              Interest at EAR: <span className="font-semibold text-blue-600">${(10000 * ear).toFixed(2)}</span><br />
+              Interest at EAR: <span className="font-semibold text-emerald-600">${(10000 * ear).toFixed(2)}</span><br />
               Difference: <span className="font-semibold">${(10000 * ear - 10000 * apr / 100).toFixed(2)}</span>
             </p>
           </div>
