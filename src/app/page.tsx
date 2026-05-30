@@ -45,7 +45,7 @@ export default function Home() {
       <SEOHead title="Compound Interest Calculator" description="Free compound interest calculator." path="/" faqs={faqs} />
       <div className="min-h-screen bg-white">
         <header className="bg-white border-b border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <SiteLogo />
             <nav className="hidden lg:flex items-center gap-0.5">
               {allCalculators.map((c, i) => (
@@ -57,13 +57,13 @@ export default function Home() {
             </nav>
             <Link href="/us-tax-calculator" className="lg:hidden text-sm text-emerald-600 font-medium hover:underline">All Tools</Link>
           </div>
-          <div className="max-w-4xl mx-auto px-4 pb-4 text-center">
+          <div className="max-w-6xl mx-auto px-4 pb-4 text-center">
             <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Compound Interest Calculator</h1>
             <p className="text-gray-400 text-sm mt-1.5">See how your money grows over time — free, no sign-up.</p>
           </div>
         </header>
 
-        <main className="max-w-4xl mx-auto px-4 py-6 relative">
+        <main className="max-w-6xl mx-auto px-4 py-6 relative">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ minHeight: '600px' }}>
             <MoneyBackground />
           </div>

@@ -46,7 +46,7 @@ export default function CalculatorLayout({
       <SEOHead title={title} description={description} path={path} faqs={faqs} />
       <div className="min-h-screen bg-white">
         <header className="bg-white border-b border-gray-100">
-          <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <SiteLogo />
             <nav className="hidden lg:flex items-center gap-0.5 text-sm font-medium">
               {allCalculators.map((c, i) => (
@@ -64,7 +64,7 @@ export default function CalculatorLayout({
           </div>
         </header>
 
-        <main className="max-w-4xl mx-auto px-4 py-6 relative">
+        <main className="max-w-6xl mx-auto px-4 py-6 relative">
           {/* $100 bill background */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ minHeight: '600px' }}>
             <MoneyBackground />
