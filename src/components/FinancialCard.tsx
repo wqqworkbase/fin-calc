@@ -10,30 +10,44 @@ export default function FinancialCard({ label, value, prefix = '$', className = 
   const [integer, decimal] = formatted.split('.');
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white p-5 ${className}`}>
-      {/* Card chip */}
-      <div className="absolute top-4 left-4 w-9 h-6 bg-emerald-400/80 rounded" />
+    <div className={`relative overflow-hidden rounded-2xl aspect-[8/5] bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-800 flex flex-col justify-between p-5 shadow-lg ${className}`}>
+      {/* Watermark pattern — subtle $ symbols and circles */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.06]"
+        viewBox="0 0 400 250"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <pattern id="card-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <text x="10" y="40" fontSize="36" fill="white" fontWeight="bold" fontFamily="serif">$</text>
+            <circle cx="50" cy="15" r="8" fill="none" stroke="white" strokeWidth="2" />
+            <circle cx="5" cy="55" r="4" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#card-pattern)" />
+        {/* Large decorative concentric circles */}
+        <circle cx="330" cy="200" r="140" fill="none" stroke="white" strokeWidth="1" opacity="0.4" />
+        <circle cx="330" cy="200" r="120" fill="none" stroke="white" strokeWidth="1" opacity="0.3" />
+        <circle cx="330" cy="200" r="100" fill="none" stroke="white" strokeWidth="0.5" opacity="0.2" />
+        {/* Bottom left decorative arc */}
+        <path d="M -20 280 Q 80 180 40 100" fill="none" stroke="white" strokeWidth="1.5" opacity="0.3" />
+        <path d="M -10 290 Q 90 190 50 110" fill="none" stroke="white" strokeWidth="1" opacity="0.2" />
+      </svg>
 
-      {/* Card network circles */}
-      <div className="absolute top-4 right-4 flex space-x-[-5px]">
-        <div className="w-6 h-6 rounded-full bg-emerald-500/50" />
-        <div className="w-6 h-6 rounded-full bg-gray-400/40" />
+      {/* Top: chip */}
+      <div className="relative z-10">
+        <div className="w-10 h-7 bg-gradient-to-br from-amber-300 via-amber-400 to-amber-200 rounded-[4px] shadow-inner" />
       </div>
 
-      {/* Balance */}
-      <div className="mt-5">
-        <p className="text-[10px] text-gray-400 mb-1 uppercase tracking-[0.15em]">{label}</p>
+      {/* Bottom: balance */}
+      <div className="relative z-10">
+        <p className="text-[11px] font-medium mb-2 uppercase tracking-[0.2em] text-white/60">{label}</p>
         <div className="flex items-start">
-          <span className="text-2xl font-bold tracking-tight">{prefix}</span>
-          <span className="text-2xl font-bold tracking-tight">{integer}</span>
-          <span className="text-xs font-semibold ml-px mt-1 text-gray-400">.{decimal}</span>
+          <span className="text-[28px] md:text-[32px] font-bold tracking-tight text-[#FDFCF8]">{prefix}</span>
+          <span className="text-[28px] md:text-[32px] font-bold tracking-tight text-[#FDFCF8]">{integer}</span>
+          <span className="text-sm font-semibold ml-0.5 mt-1.5 text-white/50">.{decimal}</span>
         </div>
-      </div>
-
-      {/* Bottom stripe */}
-      <div className="mt-5 pt-3 border-t border-white/10 flex justify-between text-[10px] text-gray-500">
-        <span>FinCalc</span>
-        <span className="text-emerald-400/60">Financial Calculator</span>
       </div>
     </div>
   );
