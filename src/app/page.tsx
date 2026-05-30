@@ -1,65 +1,111 @@
-import Image from "next/image";
+import Link from 'next/link';
+
+const calculators = [
+  {
+    title: 'Compound Interest Calculator',
+    description: 'See how your investments grow with compound interest over time.',
+    path: '/compound-interest-calculator',
+    category: 'Investing',
+  },
+  {
+    title: 'Retirement Savings Calculator',
+    description: 'Plan your retirement and see if you are on track to meet your goals.',
+    path: '/retirement-savings-calculator',
+    category: 'Retirement',
+  },
+  {
+    title: 'Loan Amortization Calculator',
+    description: 'Break down your loan payments and see how extra payments save money.',
+    path: '/loan-amortization-calculator',
+    category: 'Debt',
+  },
+  {
+    title: 'APR to EAR Converter',
+    description: 'Convert nominal APR to effective annual rate with compounding.',
+    path: '/apr-to-ear-calculator',
+    category: 'Investing',
+  },
+  {
+    title: 'Savings Goal Calculator',
+    description: 'Find out how much you need to save each month to reach your target.',
+    path: '/savings-goal-calculator',
+    category: 'Saving',
+  },
+  {
+    title: 'Inflation Calculator',
+    description: 'See how inflation affects purchasing power using historical CPI data.',
+    path: '/inflation-calculator',
+    category: 'Economics',
+  },
+  {
+    title: 'CD Ladder Calculator',
+    description: 'Build a CD ladder strategy to maximize returns with regular liquidity.',
+    path: '/cd-ladder-calculator',
+    category: 'Investing',
+  },
+  {
+    title: 'US Tax Calculator',
+    description: 'Estimate federal, state, FICA, and local taxes. Forward and reverse calculation.',
+    path: '/us-tax-calculator',
+    category: 'Tax',
+    featured: true,
+  },
+];
+
+const categories = [...new Set(calculators.map((c) => c.category))];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-3">FinCalc</h1>
+          <p className="text-blue-100 text-sm md:text-lg max-w-lg mx-auto">
+            Free online financial calculators. No sign-up required. All calculations run locally in your browser — your data never leaves your device.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </header>
+
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        {categories.map((category) => (
+          <section key={category} className="mb-8">
+            <h2 className="text-lg font-semibold text-gray-700 mb-3">{category}</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {calculators
+                .filter((c) => c.category === category)
+                .map((calc) => (
+                  <Link
+                    key={calc.path}
+                    href={calc.path}
+                    className={`bg-white rounded-xl shadow-sm border p-4 hover:border-blue-300 hover:shadow transition ${
+                      calc.featured ? 'border-blue-200 ring-1 ring-blue-200' : 'border-gray-200'
+                    }`}
+                  >
+                    <h3 className="font-semibold text-blue-600 mb-1">
+                      {calc.title}
+                      {calc.featured && (
+                        <span className="ml-2 text-xs bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded">Featured</span>
+                      )}
+                    </h3>
+                    <p className="text-sm text-gray-500">{calc.description}</p>
+                  </Link>
+                ))}
+            </div>
+          </section>
+        ))}
+
+        <section className="text-center py-8">
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">Coming Soon</h2>
+          <p className="text-sm text-gray-500">Everyday calculators — tip calculator, unit converter, time zone converter, and more.</p>
+        </section>
       </main>
+
+      <footer className="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-400">
+        <p className="mb-1 px-4">
+          Disclaimer: All calculators are for informational and educational purposes only. They do not constitute financial, tax, or investment advice.
+        </p>
+        <p> {new Date().getFullYear()} FinCalc. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
