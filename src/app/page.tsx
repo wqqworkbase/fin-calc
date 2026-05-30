@@ -22,7 +22,7 @@ const otherCalculators = [
 
 const faqs = generateCompoundInterestFAQs();
 
-const navLinkClass = "text-blue-100 hover:text-white hover:underline underline-offset-4 decoration-blue-300/50 transition-all duration-150";
+const navLinkClass = 'text-gray-600 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all duration-150';
 
 export default function Home() {
   const [initialPrincipal, setInitialPrincipal] = useState(10000);
@@ -53,25 +53,28 @@ export default function Home() {
         path="/"
         faqs={faqs}
       />
-      <div className="min-h-screen bg-gray-50">
-        <header className="bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-          <div className="max-w-4xl mx-auto px-4 py-6">
-            <div className="flex items-center justify-between mb-4">
-              <Link href="/" className="text-xl font-bold text-white">FinCalc</Link>
-              <nav className="hidden md:flex gap-4 text-sm font-medium">
+      <div className="min-h-screen bg-white">
+        {/* Header */}
+        <header className="bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto px-4 py-5">
+            <div className="flex items-center justify-between mb-3">
+              <Link href="/" className="text-xl font-bold text-gray-900 tracking-tight">
+                <span className="text-emerald-600">$</span> FinCalc
+              </Link>
+              <nav className="hidden md:flex gap-5 text-sm font-medium">
                 {otherCalculators.map((c) => (
                   <Link key={c.path} href={c.path} className={navLinkClass}>
                     {c.title}
                   </Link>
                 ))}
               </nav>
-              <Link href="/us-tax-calculator" className="md:hidden text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded text-blue-100 transition">
-                More Tools
+              <Link href="/us-tax-calculator" className="md:hidden text-sm text-emerald-600 font-medium hover:underline">
+                Tools
               </Link>
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-center">Compound Interest Calculator</h1>
-            <p className="text-blue-100 text-center text-sm mt-2 max-w-lg mx-auto">
-              See how your money grows with compound interest. Free, no sign-up required.
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 text-center">Compound Interest Calculator</h1>
+            <p className="text-gray-400 text-center text-sm mt-2">
+              See how your money grows over time — free, no sign-up.
             </p>
           </div>
         </header>
@@ -79,35 +82,36 @@ export default function Home() {
         <main className="max-w-4xl mx-auto px-4 py-6">
           <AdUnit slot={AD_SLOTS.topBanner.slot} format="horizontal" className="mb-6" />
 
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-6">
+          {/* Calculator Card */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
             <div className="grid md:grid-cols-2 gap-6">
               {/* Inputs */}
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Initial Principal ($)</label>
+                  <label className="block text-sm font-medium text-gray-600 mb-1.5">Initial Principal ($)</label>
                   <input type="number" value={initialPrincipal} onChange={(e) => setInitialPrincipal(Number(e.target.value) || 0)}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Contribution ($)</label>
+                  <label className="block text-sm font-medium text-gray-600 mb-1.5">Monthly Contribution ($)</label>
                   <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(Number(e.target.value) || 0)}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
+                  <label className="block text-sm font-medium text-gray-600 mb-1.5">Annual Interest Rate (%)</label>
                   <input type="number" value={annualRate} onChange={(e) => setAnnualRate(Number(e.target.value) || 0)} step="0.1"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Years</label>
+                    <label className="block text-sm font-medium text-gray-600 mb-1.5">Years</label>
                     <input type="number" value={years} onChange={(e) => setYears(Number(e.target.value) || 1)}
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                      className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Compounding</label>
+                    <label className="block text-sm font-medium text-gray-600 mb-1.5">Compounding</label>
                     <select value={compoundFrequency} onChange={(e) => setCompoundFrequency(Number(e.target.value))}
-                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                      className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition bg-white">
                       {COMPOUND_FREQUENCIES.map((f) => (
                         <option key={f.value} value={f.value}>{f.label}</option>
                       ))}
@@ -121,33 +125,33 @@ export default function Home() {
                 <FinancialCard label="Final Balance" value={result.finalBalance} />
 
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-gray-50 rounded-lg p-3">
-                    <p className="text-xs text-gray-500">Total Contributions</p>
-                    <FormattedAmount value={result.totalContributions} size="md" className="text-gray-900" />
+                  <div className="bg-gray-50 rounded-xl p-3.5">
+                    <p className="text-xs text-gray-400 mb-0.5">Total Contributions</p>
+                    <FormattedAmount value={result.totalContributions} size="md" className="text-gray-800" />
                   </div>
-                  <div className="bg-green-50 rounded-lg p-3">
-                    <p className="text-xs text-green-600">Total Interest</p>
-                    <FormattedAmount value={result.totalInterest} size="md" className="text-green-700" />
+                  <div className="bg-emerald-50 rounded-xl p-3.5">
+                    <p className="text-xs text-emerald-500 mb-0.5">Total Interest</p>
+                    <FormattedAmount value={result.totalInterest} size="md" className="text-emerald-700" />
                   </div>
                 </div>
 
                 <div className="h-64">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={chartData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="year" />
-                      <YAxis tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}k`} />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                      <XAxis dataKey="year" tick={{ fontSize: 12, fill: '#999' }} />
+                      <YAxis tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}k`} tick={{ fontSize: 12, fill: '#999' }} />
                       <Tooltip formatter={(v: number) => `$${v.toLocaleString()}`} />
                       <Legend />
-                      <Line type="monotone" dataKey="balance" stroke="#2563eb" name="Balance" strokeWidth={2} />
-                      <Line type="monotone" dataKey="contributions" stroke="#9ca3af" name="Contributions" strokeWidth={1} />
+                      <Line type="monotone" dataKey="balance" stroke="#059669" name="Balance" strokeWidth={2} dot={false} />
+                      <Line type="monotone" dataKey="contributions" stroke="#d1d5db" name="Contributions" strokeWidth={1} dot={false} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
 
                 <details className="mt-2">
-                  <summary className="text-sm text-gray-500 cursor-pointer hover:text-gray-700">View Formula</summary>
-                  <p className="mt-2 text-xs text-gray-500 bg-gray-50 p-3 rounded leading-relaxed">
+                  <summary className="text-sm text-gray-400 cursor-pointer hover:text-gray-600 transition-colors">View Formula</summary>
+                  <p className="mt-2 text-xs text-gray-400 bg-gray-50 p-3 rounded-xl leading-relaxed">
                     A = P(1 + r/n)<sup>nt</sup> + PMT ((1 + r/n)<sup>nt</sup> - 1) / (r/n)
                   </p>
                 </details>
@@ -157,13 +161,14 @@ export default function Home() {
 
           <AdUnit slot={AD_SLOTS.midContent.slot} format="rectangle" className="mb-6" />
 
-          <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-6">
-            <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4">
+          {/* FAQ */}
+          <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-5">Frequently Asked Questions</h2>
+            <div className="space-y-3">
               {faqs.map((faq, i) => (
-                <details key={i} className="group">
-                  <summary className="cursor-pointer font-medium text-gray-700 group-open:text-blue-600 hover:text-blue-500 transition-colors">{faq.question}</summary>
-                  <p className="mt-2 text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                <details key={i} className="group border-b border-gray-50 pb-3 last:border-0 last:pb-0">
+                  <summary className="cursor-pointer font-medium text-gray-700 group-open:text-emerald-600 hover:text-emerald-500 transition-colors text-sm">{faq.question}</summary>
+                  <p className="mt-2 text-gray-500 text-sm leading-relaxed">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -171,12 +176,13 @@ export default function Home() {
 
           <AdUnit slot={AD_SLOTS.lowerContent.slot} format="rectangle" className="mb-6" />
 
-          <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-6">
-            <h2 className="text-lg font-semibold mb-3">More Free Financial Calculators</h2>
+          {/* Other tools */}
+          <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">More Free Financial Calculators</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {otherCalculators.map((c) => (
                 <Link key={c.path} href={c.path}
-                  className="text-blue-600 hover:text-blue-800 hover:underline underline-offset-4 text-sm py-1.5 px-2 rounded hover:bg-blue-50 transition-all">
+                  className="text-gray-600 hover:text-emerald-600 hover:bg-emerald-50/50 text-sm py-2 px-3 rounded-xl transition-all font-medium">
                   {c.title}
                 </Link>
               ))}
@@ -186,7 +192,7 @@ export default function Home() {
           <AdUnit slot={AD_SLOTS.footer.slot} format="horizontal" />
         </main>
 
-        <footer className="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-400">
+        <footer className="bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-400">
           <p className="mb-1 px-4">
             Disclaimer: This calculator is for informational and educational purposes only.
             It does not constitute financial, tax, or investment advice.

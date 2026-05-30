@@ -10,29 +10,30 @@ export default function FinancialCard({ label, value, prefix = '$', className = 
   const [integer, decimal] = formatted.split('.');
 
   return (
-    <div className={`relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 text-white p-5 ${className}`}>
+    <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white p-5 ${className}`}>
       {/* Card chip */}
-      <div className="absolute top-3 left-3 w-8 h-6 bg-yellow-400/80 rounded-sm" />
+      <div className="absolute top-4 left-4 w-9 h-6 bg-emerald-400/80 rounded" />
 
-      {/* Card network icon */}
-      <div className="absolute top-3 right-3 flex space-x-[-6px]">
-        <div className="w-6 h-6 rounded-full bg-red-500/60" />
-        <div className="w-6 h-6 rounded-full bg-yellow-400/60" />
+      {/* Card network circles */}
+      <div className="absolute top-4 right-4 flex space-x-[-5px]">
+        <div className="w-6 h-6 rounded-full bg-emerald-500/50" />
+        <div className="w-6 h-6 rounded-full bg-gray-400/40" />
       </div>
 
       {/* Balance */}
-      <div className="mt-4">
-        <p className="text-xs text-slate-300 mb-1 uppercase tracking-wider">{label}</p>
+      <div className="mt-5">
+        <p className="text-[10px] text-gray-400 mb-1 uppercase tracking-[0.15em]">{label}</p>
         <div className="flex items-start">
-          <span className="text-2xl font-bold">{prefix}</span>
-          <span className="text-2xl font-bold">{integer}</span>
-          <span className="text-xs font-semibold ml-px mt-1">.{decimal}</span>
+          <span className="text-2xl font-bold tracking-tight">{prefix}</span>
+          <span className="text-2xl font-bold tracking-tight">{integer}</span>
+          <span className="text-xs font-semibold ml-px mt-1 text-gray-400">.{decimal}</span>
         </div>
       </div>
 
       {/* Bottom stripe */}
-      <div className="mt-4 pt-3 border-t border-white/10 flex justify-between text-[10px] text-slate-400">
-        <span>FinCalc Financial Calculator</span>
+      <div className="mt-5 pt-3 border-t border-white/10 flex justify-between text-[10px] text-gray-500">
+        <span>FinCalc</span>
+        <span className="text-emerald-400/60">Financial Calculator</span>
       </div>
     </div>
   );
