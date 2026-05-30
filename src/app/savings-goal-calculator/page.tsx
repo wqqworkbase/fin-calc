@@ -1,6 +1,8 @@
 'use client';
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
+import FinancialCard from '@/components/FinancialCard';
+import FormattedAmount from '@/components/FormattedAmount';
 import { calculateSavingsGoal, generateSavingsGoalFAQs } from '@/lib/calculations/savings-goal';
 
 export default function SavingsGoalCalculator() {
@@ -52,18 +54,16 @@ export default function SavingsGoalCalculator() {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-blue-50 rounded-lg p-4">
-            <p className="text-sm text-blue-600 mb-1">Required Monthly Contribution</p>
-            <p className="text-2xl font-bold text-blue-900">${result.monthlyRequired.toLocaleString()}</p>
-          </div>
+          <FinancialCard label="Required Monthly Contribution" value={result.monthlyRequired} />
+
           <div className="grid grid-cols-2 gap-3">
             <div className="bg-gray-50 rounded-lg p-3">
               <p className="text-xs text-gray-500">Total You Will Contribute</p>
-              <p className="text-lg font-semibold">${result.totalContributions.toLocaleString()}</p>
+              <FormattedAmount value={result.totalContributions} size="md" className="text-gray-900" />
             </div>
             <div className="bg-green-50 rounded-lg p-3">
               <p className="text-xs text-green-600">Interest Earned</p>
-              <p className="text-lg font-semibold text-green-700">${result.totalInterest.toLocaleString()}</p>
+              <FormattedAmount value={result.totalInterest} size="md" className="text-green-700" />
             </div>
           </div>
 

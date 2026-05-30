@@ -1,6 +1,8 @@
 'use client';
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
+import FinancialCard from '@/components/FinancialCard';
+import FormattedAmount from '@/components/FormattedAmount';
 import { calculateAmortization, calculateEarlyPayoff, generateLoanFAQs } from '@/lib/calculations/loan-amortization';
 
 export default function LoanAmortizationCalculator() {
@@ -75,18 +77,16 @@ export default function LoanAmortizationCalculator() {
           </div>
 
           <div className="space-y-4">
-            <div className="bg-blue-50 rounded-lg p-4">
-              <p className="text-sm text-blue-600 mb-1">Monthly Payment</p>
-              <p className="text-2xl font-bold text-blue-900">${result.payment.toLocaleString()}</p>
-            </div>
+            <FinancialCard label="Monthly Payment" value={result.payment} />
+
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-gray-50 rounded-lg p-3">
                 <p className="text-xs text-gray-500">Total Paid</p>
-                <p className="text-lg font-semibold">${result.totalPayments.toLocaleString()}</p>
+                <FormattedAmount value={result.totalPayments} size="md" className="text-gray-900" />
               </div>
               <div className="bg-red-50 rounded-lg p-3">
                 <p className="text-xs text-red-600">Total Interest</p>
-                <p className="text-lg font-semibold text-red-700">${result.totalInterest.toLocaleString()}</p>
+                <FormattedAmount value={result.totalInterest} size="md" className="text-red-700" />
               </div>
             </div>
 

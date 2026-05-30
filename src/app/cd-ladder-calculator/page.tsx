@@ -1,6 +1,7 @@
 'use client';
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
+import FinancialCard from '@/components/FinancialCard';
 import { calculateCDLadder, getCDTerms, generateCDFAQs } from '@/lib/calculations/cd-ladder';
 
 export default function CDLadderCalculator() {
@@ -68,10 +69,8 @@ export default function CDLadderCalculator() {
           </div>
 
           <div className="space-y-4">
-            <div className="bg-blue-50 rounded-lg p-4">
-              <p className="text-sm text-blue-600 mb-1">Total Interest Earned</p>
-              <p className="text-2xl font-bold text-blue-900">${result.totalReturn.toLocaleString()}</p>
-            </div>
+            <FinancialCard label="Total Interest Earned" value={result.totalReturn} />
+
             <div className="bg-gray-50 rounded-lg p-3">
               <p className="text-xs text-gray-500">Effective Blended APY</p>
               <p className="text-lg font-semibold">{result.effectiveAPY}%</p>

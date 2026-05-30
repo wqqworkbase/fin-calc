@@ -34,15 +34,21 @@ export default function CalculatorLayout({
             <Link href="/" className="text-xl font-bold text-blue-600">
               FinCalc
             </Link>
-            <nav className="hidden sm:flex gap-4 text-sm text-gray-600">
-              <Link href="/" className="hover:text-blue-600">
+            <nav className="hidden sm:flex gap-4 text-sm font-medium">
+              <Link href="/" className="text-gray-600 hover:text-blue-600 hover:underline underline-offset-4 decoration-blue-300 transition-all">
                 Home
               </Link>
-              <Link href="/compound-interest-calculator" className="hover:text-blue-600">
-                Compound Interest
+              <Link href="/compound-interest-calculator" className="text-gray-600 hover:text-blue-600 hover:underline underline-offset-4 decoration-blue-300 transition-all">
+                Compound
               </Link>
-              <Link href="/us-tax-calculator" className="hover:text-blue-600">
-                Tax Calculator
+              <Link href="/retirement-savings-calculator" className="text-gray-600 hover:text-blue-600 hover:underline underline-offset-4 decoration-blue-300 transition-all">
+                Retirement
+              </Link>
+              <Link href="/loan-amortization-calculator" className="text-gray-600 hover:text-blue-600 hover:underline underline-offset-4 decoration-blue-300 transition-all">
+                Loan
+              </Link>
+              <Link href="/us-tax-calculator" className="text-gray-600 hover:text-blue-600 hover:underline underline-offset-4 decoration-blue-300 transition-all">
+                Tax
               </Link>
             </nav>
           </div>
@@ -70,7 +76,7 @@ export default function CalculatorLayout({
               <div className="space-y-4">
                 {faqs.map((faq, i) => (
                   <details key={i} className="group">
-                    <summary className="cursor-pointer font-medium text-gray-700 group-open:text-blue-600">
+                    <summary className="cursor-pointer font-medium text-gray-700 group-open:text-blue-600 hover:text-blue-500 transition-colors">
                       {faq.question}
                     </summary>
                     <p className="mt-2 text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
@@ -90,7 +96,7 @@ export default function CalculatorLayout({
                   <Link
                     key={i}
                     href={rc.path}
-                    className="text-blue-600 hover:underline text-sm"
+                    className="text-blue-600 hover:text-blue-800 hover:underline underline-offset-4 text-sm py-1 px-1.5 rounded hover:bg-blue-50 transition-all"
                   >
                     {rc.title}
                   </Link>

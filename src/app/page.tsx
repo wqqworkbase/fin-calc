@@ -3,22 +3,26 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import SEOHead from '@/components/SEOHead';
 import AdUnit from '@/components/AdUnit';
+import FinancialCard from '@/components/FinancialCard';
+import FormattedAmount from '@/components/FormattedAmount';
 import { AD_SLOTS } from '@/lib/ad-config';
 import { calculateCompoundInterest, generateCompoundInterestFAQs } from '@/lib/calculations/compound-interest';
 import { COMPOUND_FREQUENCIES } from '@/lib/constants';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const otherCalculators = [
-  { title: 'Retirement Savings', path: '/retirement-savings-calculator' },
-  { title: 'Loan Amortization', path: '/loan-amortization-calculator' },
-  { title: 'APR to EAR', path: '/apr-to-ear-calculator' },
+  { title: 'Retirement', path: '/retirement-savings-calculator' },
+  { title: 'Loan', path: '/loan-amortization-calculator' },
+  { title: 'APR→EAR', path: '/apr-to-ear-calculator' },
   { title: 'Savings Goal', path: '/savings-goal-calculator' },
   { title: 'Inflation', path: '/inflation-calculator' },
   { title: 'CD Ladder', path: '/cd-ladder-calculator' },
-  { title: 'US Tax', path: '/us-tax-calculator' },
+  { title: 'Tax', path: '/us-tax-calculator' },
 ];
 
 const faqs = generateCompoundInterestFAQs();
+
+const navLinkClass = "text-blue-100 hover:text-white hover:underline underline-offset-4 decoration-blue-300/50 transition-all duration-150";
 
 export default function Home() {
   const [initialPrincipal, setInitialPrincipal] = useState(10000);
@@ -45,7 +49,7 @@ export default function Home() {
     <>
       <SEOHead
         title="Compound Interest Calculator"
-        description="Free compound interest calculator. Calculate how your investments grow over time with yearly breakdowns and visual charts. Also includes retirement, loan, tax, and other financial calculators."
+        description="Free compound interest calculator. See how your investments grow with yearly breakdowns and visual charts. Includes retirement, loan, tax, and more calculators."
         path="/"
         faqs={faqs}
       />
@@ -54,14 +58,14 @@ export default function Home() {
           <div className="max-w-4xl mx-auto px-4 py-6">
             <div className="flex items-center justify-between mb-4">
               <Link href="/" className="text-xl font-bold text-white">FinCalc</Link>
-              <nav className="hidden md:flex gap-3 text-sm">
+              <nav className="hidden md:flex gap-4 text-sm font-medium">
                 {otherCalculators.map((c) => (
-                  <Link key={c.path} href={c.path} className="text-blue-100 hover:text-white transition">
+                  <Link key={c.path} href={c.path} className={navLinkClass}>
                     {c.title}
                   </Link>
                 ))}
               </nav>
-              <Link href="/us-tax-calculator" className="md:hidden text-xs bg-white/10 px-3 py-1.5 rounded text-blue-100">
+              <Link href="/us-tax-calculator" className="md:hidden text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded text-blue-100 transition">
                 More Tools
               </Link>
             </div>
@@ -114,18 +118,16 @@ export default function Home() {
 
               {/* Results */}
               <div className="space-y-4">
-                <div className="bg-blue-50 rounded-lg p-4">
-                  <p className="text-sm text-blue-600 mb-1">Final Balance</p>
-                  <p className="text-2xl font-bold text-blue-900">${result.finalBalance.toLocaleString()}</p>
-                </div>
+                <FinancialCard label="Final Balance" value={result.finalBalance} />
+
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-gray-50 rounded-lg p-3">
                     <p className="text-xs text-gray-500">Total Contributions</p>
-                    <p className="text-lg font-semibold">${result.totalContributions.toLocaleString()}</p>
+                    <FormattedAmount value={result.totalContributions} size="md" className="text-gray-900" />
                   </div>
                   <div className="bg-green-50 rounded-lg p-3">
-                    <p className="text-xs text-green-600">Total Interest Earned</p>
-                    <p className="text-lg font-semibold text-green-700">${result.totalInterest.toLocaleString()}</p>
+                    <p className="text-xs text-green-600">Total Interest</p>
+                    <FormattedAmount value={result.totalInterest} size="md" className="text-green-700" />
                   </div>
                 </div>
 
@@ -155,13 +157,12 @@ export default function Home() {
 
           <AdUnit slot={AD_SLOTS.midContent.slot} format="rectangle" className="mb-6" />
 
-          {/* FAQ */}
           <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-6">
             <h2 className="text-xl font-semibold mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
                 <details key={i} className="group">
-                  <summary className="cursor-pointer font-medium text-gray-700 group-open:text-blue-600">{faq.question}</summary>
+                  <summary className="cursor-pointer font-medium text-gray-700 group-open:text-blue-600 hover:text-blue-500 transition-colors">{faq.question}</summary>
                   <p className="mt-2 text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
                 </details>
               ))}
@@ -170,12 +171,12 @@ export default function Home() {
 
           <AdUnit slot={AD_SLOTS.lowerContent.slot} format="rectangle" className="mb-6" />
 
-          {/* Other tools */}
           <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 mb-6">
             <h2 className="text-lg font-semibold mb-3">More Free Financial Calculators</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {otherCalculators.map((c) => (
-                <Link key={c.path} href={c.path} className="text-blue-600 hover:underline text-sm py-1">
+                <Link key={c.path} href={c.path}
+                  className="text-blue-600 hover:text-blue-800 hover:underline underline-offset-4 text-sm py-1.5 px-2 rounded hover:bg-blue-50 transition-all">
                   {c.title}
                 </Link>
               ))}
@@ -188,8 +189,7 @@ export default function Home() {
         <footer className="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-400">
           <p className="mb-1 px-4">
             Disclaimer: This calculator is for informational and educational purposes only.
-            It does not constitute financial, tax, or investment advice. Results are estimates.
-            Consult a qualified financial professional before making any financial decisions.
+            It does not constitute financial, tax, or investment advice.
           </p>
           <p> {new Date().getFullYear()} FinCalc. All rights reserved.</p>
         </footer>
