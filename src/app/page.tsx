@@ -57,9 +57,9 @@ export default function Home() {
             </nav>
             <Link href="/us-tax-calculator" className="lg:hidden text-sm text-emerald-600 font-medium hover:underline">All Tools</Link>
           </div>
-          <div className="max-w-6xl mx-auto px-4 pb-4 text-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Compound Interest Calculator</h1>
-            <p className="text-gray-400 text-sm mt-1.5">See how your money grows over time — free, no sign-up.</p>
+          <div className="max-w-6xl mx-auto px-4 pb-3 text-center">
+            <h1 className="text-lg md:text-2xl font-bold text-gray-900">Compound Interest Calculator</h1>
+            <p className="text-gray-400 text-xs mt-1">See how your money grows over time — free, no sign-up.</p>
           </div>
         </header>
 

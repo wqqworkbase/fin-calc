@@ -71,8 +71,8 @@ export default function CalculatorLayout({
           </div>
 
           <div className="relative z-10">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-2">{title}</h1>
-            <p className="text-gray-400 text-center text-sm md:text-base mb-6">{description}</p>
+            <h1 className="text-lg md:text-2xl font-bold text-gray-900 text-center mb-1">{title}</h1>
+            <p className="text-gray-400 text-center text-xs md:text-sm mb-4">{description}</p>
 
             <AdUnit slot={AD_SLOTS.topBanner.slot} format="horizontal" className="mb-6" />
 
