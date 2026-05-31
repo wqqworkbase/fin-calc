@@ -56,6 +56,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        {/* Google AdSense */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1859323496106950" crossOrigin="anonymous" />
         {/* Organization structured data */}
         <script
           type="application/ld+json"
@@ -77,13 +79,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-sans">
         {children}
-        {/* Google AdSense — replace with real publisher ID after approval */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1859323496106950"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         {/* Google Analytics — replace with real GA4 ID */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" />
         <Script id="ga-init" strategy="afterInteractive">
