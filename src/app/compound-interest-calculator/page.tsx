@@ -45,27 +45,27 @@ export default function CompoundInterestCalculator() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Initial Principal ($)</label>
             <input
-              type="number"
+              type="text" inputMode="decimal" autoComplete="off"
               value={initialPrincipal}
-              onChange={(e) => setInitialPrincipal(Number(e.target.value) || 0)}
+              onChange={(e) => setInitialPrincipal(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Contribution ($)</label>
             <input
-              type="number"
+              type="text" inputMode="decimal" autoComplete="off"
               value={monthlyContribution}
-              onChange={(e) => setMonthlyContribution(Number(e.target.value) || 0)}
+              onChange={(e) => setMonthlyContribution(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
             <input
-              type="number"
+              type="text" inputMode="decimal" autoComplete="off"
               value={annualRate}
-              onChange={(e) => setAnnualRate(Number(e.target.value) || 0)}
+              onChange={(e) => setAnnualRate(parseFloat(e.target.value) || 0)}
               step="0.1"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
             />
@@ -74,9 +74,9 @@ export default function CompoundInterestCalculator() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Years</label>
               <input
-                type="number"
+                type="text" inputMode="decimal" autoComplete="off"
                 value={years}
-                onChange={(e) => setYears(Number(e.target.value) || 1)}
+                onChange={(e) => setYears(parseFloat(e.target.value) || 1)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
               />
             </div>

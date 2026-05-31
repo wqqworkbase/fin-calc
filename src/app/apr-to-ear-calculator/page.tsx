@@ -28,7 +28,7 @@ export default function AprToEarCalculator() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">APR (Nominal Rate) %</label>
-            <input type="number" value={apr} onChange={(e) => setApr(Number(e.target.value) || 0)} step="0.01"
+            <input type="text" inputMode="decimal" autoComplete="off" value={apr} onChange={(e) => setApr(parseFloat(e.target.value) || 0)} step="0.01"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>

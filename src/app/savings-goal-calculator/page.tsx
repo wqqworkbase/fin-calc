@@ -33,22 +33,22 @@ export default function SavingsGoalCalculator() {
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Target Amount ($)</label>
-            <input type="number" value={targetAmount} onChange={(e) => setTargetAmount(Number(e.target.value) || 0)}
+            <input type="text" inputMode="decimal" autoComplete="off" value={targetAmount} onChange={(e) => setTargetAmount(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Years to Reach Goal</label>
-            <input type="number" value={years} onChange={(e) => setYears(Number(e.target.value) || 1)}
+            <input type="text" inputMode="decimal" autoComplete="off" value={years} onChange={(e) => setYears(parseFloat(e.target.value) || 1)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Current Savings ($)</label>
-            <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(Number(e.target.value) || 0)}
+            <input type="text" inputMode="decimal" autoComplete="off" value={currentSavings} onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Expected Annual Return (%)</label>
-            <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(Number(e.target.value) || 0)} step="0.1"
+            <input type="text" inputMode="decimal" autoComplete="off" value={annualReturn} onChange={(e) => setAnnualReturn(parseFloat(e.target.value) || 0)} step="0.1"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
         </div>

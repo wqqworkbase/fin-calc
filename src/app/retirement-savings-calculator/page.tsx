@@ -46,38 +46,38 @@ export default function RetirementSavingsCalculator() {
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Current Age</label>
-              <input type="number" value={currentAge} onChange={(e) => setCurrentAge(Number(e.target.value) || 0)}
+              <input type="text" inputMode="decimal" autoComplete="off" value={currentAge} onChange={(e) => setCurrentAge(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Retirement Age</label>
-              <input type="number" value={retirementAge} onChange={(e) => setRetirementAge(Number(e.target.value) || 0)}
+              <input type="text" inputMode="decimal" autoComplete="off" value={retirementAge} onChange={(e) => setRetirementAge(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Current Savings ($)</label>
-            <input type="number" value={currentSavings} onChange={(e) => setCurrentSavings(Number(e.target.value) || 0)}
+            <input type="text" inputMode="decimal" autoComplete="off" value={currentSavings} onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Contribution ($)</label>
-            <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(Number(e.target.value) || 0)}
+            <input type="text" inputMode="decimal" autoComplete="off" value={monthlyContribution} onChange={(e) => setMonthlyContribution(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Expected Annual Return (%)</label>
-            <input type="number" value={annualReturn} onChange={(e) => setAnnualReturn(Number(e.target.value) || 0)} step="0.1"
+            <input type="text" inputMode="decimal" autoComplete="off" value={annualReturn} onChange={(e) => setAnnualReturn(parseFloat(e.target.value) || 0)} step="0.1"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Annual Retirement Spending ($)</label>
-            <input type="number" value={annualRetirementSpend} onChange={(e) => setAnnualRetirementSpend(Number(e.target.value) || 0)}
+            <input type="text" inputMode="decimal" autoComplete="off" value={annualRetirementSpend} onChange={(e) => setAnnualRetirementSpend(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Life Expectancy (age)</label>
-            <input type="number" value={lifeExpectancy} onChange={(e) => setLifeExpectancy(Number(e.target.value) || 0)}
+            <input type="text" inputMode="decimal" autoComplete="off" value={lifeExpectancy} onChange={(e) => setLifeExpectancy(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
         </div>

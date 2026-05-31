@@ -45,7 +45,7 @@ export default function CDLadderCalculator() {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Total Investment ($)</label>
-              <input type="number" value={totalAmount} onChange={(e) => setTotalAmount(Number(e.target.value) || 0)}
+              <input type="text" inputMode="decimal" autoComplete="off" value={totalAmount} onChange={(e) => setTotalAmount(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
@@ -55,9 +55,9 @@ export default function CDLadderCalculator() {
                   <div key={term.label} className="flex items-center gap-3">
                     <span className="text-sm text-gray-600 w-28">{term.label}</span>
                     <input
-                      type="number"
+                      type="text" inputMode="decimal" autoComplete="off"
                       value={apys[term.label] ?? ''}
-                      onChange={(e) => updateApy(term.label, Number(e.target.value) || 0)}
+                      onChange={(e) => updateApy(term.label, parseFloat(e.target.value) || 0)}
                       step="0.01"
                       className="flex-1 border border-gray-300 rounded-lg px-2 py-1.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400"
                     />

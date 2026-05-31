@@ -46,18 +46,18 @@ export default function LoanAmortizationCalculator() {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Loan Amount ($)</label>
-              <input type="number" value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value) || 0)}
+              <input type="text" inputMode="decimal" autoComplete="off" value={loanAmount} onChange={(e) => setLoanAmount(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
-              <input type="number" value={annualRate} onChange={(e) => setAnnualRate(Number(e.target.value) || 0)} step="0.01"
+              <input type="text" inputMode="decimal" autoComplete="off" value={annualRate} onChange={(e) => setAnnualRate(parseFloat(e.target.value) || 0)} step="0.01"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Term (years)</label>
-                <input type="number" value={termYears} onChange={(e) => setTermYears(Number(e.target.value) || 1)}
+                <input type="text" inputMode="decimal" autoComplete="off" value={termYears} onChange={(e) => setTermYears(parseFloat(e.target.value) || 1)}
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
               </div>
               <div>
@@ -71,7 +71,7 @@ export default function LoanAmortizationCalculator() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Extra Payment per Period ($)</label>
-              <input type="number" value={extraPayment} onChange={(e) => setExtraPayment(Number(e.target.value) || 0)}
+              <input type="text" inputMode="decimal" autoComplete="off" value={extraPayment} onChange={(e) => setExtraPayment(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
           </div>
