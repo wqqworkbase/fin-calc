@@ -1,7 +1,7 @@
 import { FilingStatus } from './types';
 
 export const SITE_NAME = 'FinCalc';
-export const SITE_DOMAIN = 'fincalc.com';
+export const SITE_DOMAIN = 'calculatefintax.com';
 
 export const COMPOUND_FREQUENCIES = [
   { value: 365, label: 'Daily' },

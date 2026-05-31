@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://fincalc.com';
+  const baseUrl = 'https://calculatefintax.com';
   const routes = [
     '/',
     '/compound-interest-calculator',

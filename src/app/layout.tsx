@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "mortgage calculator",
     "investment calculator",
   ],
-  metadataBase: new URL("https://fincalc.com"),
+  metadataBase: new URL("https://calculatefintax.com"),
   alternates: { canonical: "/" },
   robots: {
     index: true,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FinCalc - Free Online Financial Calculators",
     description: "Free online financial calculators. No sign-up required. All calculations run locally.",
-    url: "https://fincalc.com",
+    url: "https://calculatefintax.com",
     siteName: "FinCalc",
     locale: "en_US",
     type: "website",
@@ -64,11 +64,11 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "FinCalc",
-              url: "https://fincalc.com",
+              url: "https://calculatefintax.com",
               description: "Free online financial calculators.",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://fincalc.com/search?q={search_term_string}",
+                target: "https://calculatefintax.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

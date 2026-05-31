@@ -9,7 +9,7 @@ interface SEOHeadProps {
 
 export default function SEOHead({ title, description, path, faqs }: SEOHeadProps) {
   const fullTitle = `${title} - Free Online Calculator | FinCalc`;
-  const url = `https://fincalc.com${path}`;
+  const url = `https://calculatefintax.com${path}`;
 
   const schema = {
     '@context': 'https://schema.org',
