@@ -58,6 +58,8 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         {/* Google AdSense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1859323496106950" crossOrigin="anonymous" />
+        {/* Google CMP (Consent Management Platform) — GDPR consent for EEA/UK/CH users */}
+        <script async src="https://fundingchoicesmessages.google.com/i/pub-1859323496106950?ers=1" />
         {/* Organization structured data */}
         <script
           type="application/ld+json"
