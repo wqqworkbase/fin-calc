@@ -115,6 +115,13 @@ export default function Home() {
 
         <footer className="bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-400">
           <p className="mb-1 px-4">Disclaimer: This calculator is for informational and educational purposes only. It does not constitute financial, tax, or investment advice.</p>
+          <nav className="flex justify-center gap-3 mb-1">
+            <Link href="/about" className="hover:text-gray-600 hover:underline underline-offset-4 transition-colors">About Us</Link>
+            <span className="text-gray-200">|</span>
+            <Link href="/terms" className="hover:text-gray-600 hover:underline underline-offset-4 transition-colors">Terms of Use</Link>
+            <span className="text-gray-200">|</span>
+            <Link href="/privacy" className="hover:text-gray-600 hover:underline underline-offset-4 transition-colors">Privacy Policy</Link>
+          </nav>
           <p> {new Date().getFullYear()} Calculator Financial &amp; Tax. All rights reserved.</p>
         </footer>
       </div>

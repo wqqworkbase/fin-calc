@@ -127,6 +127,13 @@ export default function CalculatorLayout({
             financial, tax, or investment advice. Results are estimates. Consult a qualified financial professional
             before making any financial decisions.
           </p>
+          <nav className="flex justify-center gap-3 mb-1">
+            <Link href="/about" className="hover:text-gray-600 hover:underline underline-offset-4 transition-colors">About Us</Link>
+            <span className="text-gray-200">|</span>
+            <Link href="/terms" className="hover:text-gray-600 hover:underline underline-offset-4 transition-colors">Terms of Use</Link>
+            <span className="text-gray-200">|</span>
+            <Link href="/privacy" className="hover:text-gray-600 hover:underline underline-offset-4 transition-colors">Privacy Policy</Link>
+          </nav>
           <p> {new Date().getFullYear()} Calculator Financial &amp; Tax. All rights reserved.</p>
         </footer>
       </div>
