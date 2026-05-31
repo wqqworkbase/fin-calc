@@ -6,4 +6,4 @@ export const AD_SLOTS = {
 };
 
 // Replace slot IDs and publisher ID after AdSense approval
-export const AD_PUBLISHER_ID = 'ca-pub-XXXXXXXXXXXXXXXX';
+export const AD_PUBLISHER_ID = 'ca-pub-1859323496106950';

@@ -15,7 +15,7 @@ export default function AdUnit({ slot, format = 'horizontal', className = '' }: 
       const ins = document.createElement('ins');
       ins.className = 'adsbygoogle';
       ins.style.display = 'block';
-      ins.setAttribute('data-ad-client', 'ca-pub-XXXXXXXXXXXXXXXX');
+      ins.setAttribute('data-ad-client', 'ca-pub-1859323496106950');
       ins.setAttribute('data-ad-slot', slot);
       ins.setAttribute('data-ad-format', 'auto');
       ins.setAttribute('data-full-width-responsive', 'true');
