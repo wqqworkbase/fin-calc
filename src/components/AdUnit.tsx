@@ -22,7 +22,8 @@ export default function AdUnit({ slot, format = 'horizontal', className = '' }: 
       containerRef.current.appendChild(ins);
 
       try {
-        (window as unknown as { adsbygoogle?: { push: (v: object) => void }[] }).adsbygoogle?.push({} as object);
+        const w = window as unknown as { adsbygoogle?: Array<{ push: (arg: Record<string, never>) => void }> };
+        w.adsbygoogle?.push({});
       } catch {
         // AdSense not loaded — expected during development
       }
