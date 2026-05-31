@@ -33,20 +33,20 @@ export default function InflationCalculator() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Amount ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Amount ($)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={amount} onChange={(e) => setAmount(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">From Year</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">From Year</label>
               <select value={fromYear} onChange={(e) => setFromYear(Number(e.target.value))}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
                 {years.map((y) => <option key={y} value={y}>{y}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">To Year</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">To Year</label>
               <select value={toYear} onChange={(e) => setToYear(Number(e.target.value))}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
                 {years.map((y) => <option key={y} value={y}>{y}</option>)}

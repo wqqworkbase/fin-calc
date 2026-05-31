@@ -14,13 +14,13 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 const allCalculators = [
   { title: 'Compound Interest', path: '/compound-interest-calculator' },
-  { title: 'Retirement', path: '/retirement-savings-calculator' },
   { title: 'Loan', path: '/loan-amortization-calculator' },
+  { title: 'Tax', path: '/us-tax-calculator' },
+  { title: 'Retirement', path: '/retirement-savings-calculator' },
   { title: 'APR → EAR', path: '/apr-to-ear-calculator' },
   { title: 'Savings Goal', path: '/savings-goal-calculator' },
   { title: 'Inflation', path: '/inflation-calculator' },
   { title: 'CD Ladder', path: '/cd-ladder-calculator' },
-  { title: 'Tax', path: '/us-tax-calculator' },
 ];
 
 const faqs = generateCompoundInterestFAQs();
@@ -74,12 +74,12 @@ export default function Home() {
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div><label className="block text-sm font-medium text-gray-600 mb-1.5">Initial Principal ($)</label><input type="text" inputMode="decimal" autoComplete="off" value={initialPrincipal} onChange={(e) => setInitialPrincipal(parseFloat(e.target.value) || 0)} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
-                  <div><label className="block text-sm font-medium text-gray-600 mb-1.5">Monthly Contribution ($)</label><input type="text" inputMode="decimal" autoComplete="off" value={monthlyContribution} onChange={(e) => setMonthlyContribution(parseFloat(e.target.value) || 0)} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
-                  <div><label className="block text-sm font-medium text-gray-600 mb-1.5">Annual Interest Rate (%)</label><input type="text" inputMode="decimal" autoComplete="off" value={annualRate} onChange={(e) => setAnnualRate(parseFloat(e.target.value) || 0)} step="0.1" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
+                  <div><label className="block text-sm font-semibold text-gray-900 mb-1.5">Initial Principal ($)</label><input type="text" inputMode="decimal" autoComplete="off" value={initialPrincipal} onChange={(e) => setInitialPrincipal(parseFloat(e.target.value) || 0)} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
+                  <div><label className="block text-sm font-semibold text-gray-900 mb-1.5">Monthly Contribution ($)</label><input type="text" inputMode="decimal" autoComplete="off" value={monthlyContribution} onChange={(e) => setMonthlyContribution(parseFloat(e.target.value) || 0)} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
+                  <div><label className="block text-sm font-semibold text-gray-900 mb-1.5">Annual Interest Rate (%)</label><input type="text" inputMode="decimal" autoComplete="off" value={annualRate} onChange={(e) => setAnnualRate(parseFloat(e.target.value) || 0)} step="0.1" className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
                   <div className="grid grid-cols-2 gap-3">
-                    <div><label className="block text-sm font-medium text-gray-600 mb-1.5">Years</label><input type="text" inputMode="decimal" autoComplete="off" value={years} onChange={(e) => setYears(parseFloat(e.target.value) || 1)} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
-                    <div><label className="block text-sm font-medium text-gray-600 mb-1.5">Compounding</label><select value={compoundFrequency} onChange={(e) => setCompoundFrequency(Number(e.target.value))} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition bg-white">{COMPOUND_FREQUENCIES.map((f) => (<option key={f.value} value={f.value}>{f.label}</option>))}</select></div>
+                    <div><label className="block text-sm font-semibold text-gray-900 mb-1.5">Years</label><input type="text" inputMode="decimal" autoComplete="off" value={years} onChange={(e) => setYears(parseFloat(e.target.value) || 1)} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition" /></div>
+                    <div><label className="block text-sm font-semibold text-gray-900 mb-1.5">Compounding</label><select value={compoundFrequency} onChange={(e) => setCompoundFrequency(Number(e.target.value))} className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 outline-none transition bg-white">{COMPOUND_FREQUENCIES.map((f) => (<option key={f.value} value={f.value}>{f.label}</option>))}</select></div>
                   </div>
                 </div>
 

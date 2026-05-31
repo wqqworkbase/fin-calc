@@ -45,38 +45,38 @@ export default function RetirementSavingsCalculator() {
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Current Age</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Current Age</label>
               <input type="text" inputMode="decimal" autoComplete="off" value={currentAge} onChange={(e) => setCurrentAge(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Retirement Age</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Retirement Age</label>
               <input type="text" inputMode="decimal" autoComplete="off" value={retirementAge} onChange={(e) => setRetirementAge(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Current Savings ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Current Savings ($)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={currentSavings} onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Contribution ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Monthly Contribution ($)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={monthlyContribution} onChange={(e) => setMonthlyContribution(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Expected Annual Return (%)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Expected Annual Return (%)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={annualReturn} onChange={(e) => setAnnualReturn(parseFloat(e.target.value) || 0)} step="0.1"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Annual Retirement Spending ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Annual Retirement Spending ($)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={annualRetirementSpend} onChange={(e) => setAnnualRetirementSpend(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Life Expectancy (age)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Life Expectancy (age)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={lifeExpectancy} onChange={(e) => setLifeExpectancy(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>

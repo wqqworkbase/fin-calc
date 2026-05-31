@@ -211,7 +211,7 @@ export default function USTaxCalculator() {
           <div className="space-y-4">
             {mode === 'forward' ? (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Gross Annual Income ($)</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-1.5">Gross Annual Income ($)</label>
                 <input
                   type="text" inputMode="decimal" autoComplete="off"
                   value={income}
@@ -221,7 +221,7 @@ export default function USTaxCalculator() {
               </div>
             ) : (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Target After-Tax Income ($)</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-1.5">Target After-Tax Income ($)</label>
                 <input
                   type="text" inputMode="decimal" autoComplete="off"
                   value={targetAfterTax}
@@ -232,7 +232,7 @@ export default function USTaxCalculator() {
             )}
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Filing Status</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Filing Status</label>
               <select
                 value={filingStatus}
                 onChange={(e) => setFilingStatus(e.target.value as FilingStatus)}
@@ -246,7 +246,7 @@ export default function USTaxCalculator() {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">State</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-1.5">State</label>
                 <select
                   value={stateCode}
                   onChange={(e) => {
@@ -261,7 +261,7 @@ export default function USTaxCalculator() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Tax Year</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-1.5">Tax Year</label>
                 <select
                   value={taxYear}
                   onChange={(e) => setTaxYear(Number(e.target.value))}
@@ -275,7 +275,7 @@ export default function USTaxCalculator() {
 
             {localJurisdictions.length > 0 && (
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">City / County (optional)</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-1.5">City / County (optional)</label>
                 <select
                   value={selectedCity}
                   onChange={(e) => setSelectedCity(e.target.value)}

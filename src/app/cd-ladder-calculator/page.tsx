@@ -44,12 +44,12 @@ export default function CDLadderCalculator() {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Total Investment ($)</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Total Investment ($)</label>
               <input type="text" inputMode="decimal" autoComplete="off" value={totalAmount} onChange={(e) => setTotalAmount(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">APY for Each CD Term (%)</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">APY for Each CD Term (%)</label>
               <div className="space-y-2">
                 {terms.map((term) => (
                   <div key={term.label} className="flex items-center gap-3">

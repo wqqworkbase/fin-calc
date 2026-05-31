@@ -32,22 +32,22 @@ export default function SavingsGoalCalculator() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Target Amount ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Target Amount ($)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={targetAmount} onChange={(e) => setTargetAmount(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Years to Reach Goal</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Years to Reach Goal</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={years} onChange={(e) => setYears(parseFloat(e.target.value) || 1)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Current Savings ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Current Savings ($)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={currentSavings} onChange={(e) => setCurrentSavings(parseFloat(e.target.value) || 0)}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Expected Annual Return (%)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Expected Annual Return (%)</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={annualReturn} onChange={(e) => setAnnualReturn(parseFloat(e.target.value) || 0)} step="0.1"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
@@ -68,7 +68,7 @@ export default function SavingsGoalCalculator() {
           </div>
 
           <div className="bg-gray-50 rounded-lg p-4">
-            <p className="text-sm font-medium text-gray-700 mb-2">Comparison at Different Return Rates</p>
+            <p className="text-sm font-semibold text-gray-900 mb-2">Comparison at Different Return Rates</p>
             <div className="space-y-1">
               {result.scenarios.map((s, i) => (
                 <div key={i} className="flex justify-between text-sm">

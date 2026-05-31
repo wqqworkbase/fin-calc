@@ -45,23 +45,23 @@ export default function LoanAmortizationCalculator() {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Loan Amount ($)</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Loan Amount ($)</label>
               <input type="text" inputMode="decimal" autoComplete="off" value={loanAmount} onChange={(e) => setLoanAmount(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Annual Interest Rate (%)</label>
               <input type="text" inputMode="decimal" autoComplete="off" value={annualRate} onChange={(e) => setAnnualRate(parseFloat(e.target.value) || 0)} step="0.01"
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Term (years)</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-1.5">Term (years)</label>
                 <input type="text" inputMode="decimal" autoComplete="off" value={termYears} onChange={(e) => setTermYears(parseFloat(e.target.value) || 1)}
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Payment Frequency</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-1.5">Payment Frequency</label>
                 <select value={paymentsPerYear} onChange={(e) => setPaymentsPerYear(Number(e.target.value))}
                   className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
                   <option value={12}>Monthly (12/year)</option>
@@ -70,7 +70,7 @@ export default function LoanAmortizationCalculator() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Extra Payment per Period ($)</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Extra Payment per Period ($)</label>
               <input type="text" inputMode="decimal" autoComplete="off" value={extraPayment} onChange={(e) => setExtraPayment(parseFloat(e.target.value) || 0)}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
             </div>

@@ -27,12 +27,12 @@ export default function AprToEarCalculator() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">APR (Nominal Rate) %</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">APR (Nominal Rate) %</label>
             <input type="text" inputMode="decimal" autoComplete="off" value={apr} onChange={(e) => setApr(parseFloat(e.target.value) || 0)} step="0.01"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Compounding Frequency</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Compounding Frequency</label>
             <select value={compoundFrequency} onChange={(e) => setCompoundFrequency(Number(e.target.value))}
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-400">
               <option value={365}>Daily (365/year)</option>

@@ -21,13 +21,13 @@ interface CalculatorLayoutProps {
 
 const allCalculators = [
   { title: 'Compound Interest', path: '/compound-interest-calculator' },
-  { title: 'Retirement', path: '/retirement-savings-calculator' },
   { title: 'Loan', path: '/loan-amortization-calculator' },
+  { title: 'Tax', path: '/us-tax-calculator' },
+  { title: 'Retirement', path: '/retirement-savings-calculator' },
   { title: 'APR → EAR', path: '/apr-to-ear-calculator' },
   { title: 'Savings Goal', path: '/savings-goal-calculator' },
   { title: 'Inflation', path: '/inflation-calculator' },
   { title: 'CD Ladder', path: '/cd-ladder-calculator' },
-  { title: 'Tax', path: '/us-tax-calculator' },
 ];
 
 const navLinkClass =

@@ -43,7 +43,7 @@ export default function CompoundInterestCalculator() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Initial Principal ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Initial Principal ($)</label>
             <input
               type="text" inputMode="decimal" autoComplete="off"
               value={initialPrincipal}
@@ -52,7 +52,7 @@ export default function CompoundInterestCalculator() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Contribution ($)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Monthly Contribution ($)</label>
             <input
               type="text" inputMode="decimal" autoComplete="off"
               value={monthlyContribution}
@@ -61,7 +61,7 @@ export default function CompoundInterestCalculator() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Annual Interest Rate (%)</label>
+            <label className="block text-sm font-semibold text-gray-900 mb-1.5">Annual Interest Rate (%)</label>
             <input
               type="text" inputMode="decimal" autoComplete="off"
               value={annualRate}
@@ -72,7 +72,7 @@ export default function CompoundInterestCalculator() {
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Years</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Years</label>
               <input
                 type="text" inputMode="decimal" autoComplete="off"
                 value={years}
@@ -81,7 +81,7 @@ export default function CompoundInterestCalculator() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Compounding</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-1.5">Compounding</label>
               <select
                 value={compoundFrequency}
                 onChange={(e) => setCompoundFrequency(Number(e.target.value))}
