@@ -117,7 +117,7 @@ export default function CompoundInterestCalculator() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
                 <YAxis tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}k`} />
-                <Tooltip formatter={(v: number) => `$${v.toLocaleString()}`} />
+                <Tooltip formatter={(v: number | string) => `$${Number(v).toLocaleString()}`} />
                 <Legend />
                 <Line type="monotone" dataKey="balance" stroke="#2563eb" name="Balance" strokeWidth={2} />
                 <Line type="monotone" dataKey="contributions" stroke="#9ca3af" name="Contributions" strokeWidth={1} />
