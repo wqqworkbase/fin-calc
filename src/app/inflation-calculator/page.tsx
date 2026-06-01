@@ -1,6 +1,7 @@
 'use client';
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
+import InflationArticle from '@/components/articles/InflationArticle';
 import { calculateInflation, getAvailableYears, generateInflationFAQs } from '@/lib/calculations/inflation';
 
 export default function InflationCalculator() {
@@ -23,6 +24,7 @@ export default function InflationCalculator() {
       description="See how inflation erodes purchasing power over time using official U.S. Bureau of Labor Statistics CPI-U data from 1913 to present."
       path="/inflation-calculator"
       faqs={generateInflationFAQs()}
+      article={<InflationArticle />}
       relatedCalculators={[
         { title: 'Compound Interest Calculator', path: '/compound-interest-calculator' },
         { title: 'Retirement Savings Calculator', path: '/retirement-savings-calculator' },

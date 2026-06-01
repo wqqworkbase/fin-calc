@@ -2,6 +2,7 @@
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
 import FinancialCard from '@/components/FinancialCard';
+import CDLadderArticle from '@/components/articles/CDLadderArticle';
 import { calculateCDLadder, getCDTerms, generateCDFAQs } from '@/lib/calculations/cd-ladder';
 
 export default function CDLadderCalculator() {
@@ -33,6 +34,7 @@ export default function CDLadderCalculator() {
       description="Build a Certificate of Deposit (CD) ladder strategy to maximize returns while maintaining regular access to your funds."
       path="/cd-ladder-calculator"
       faqs={generateCDFAQs()}
+      article={<CDLadderArticle />}
       relatedCalculators={[
         { title: 'Compound Interest Calculator', path: '/compound-interest-calculator' },
         { title: 'Savings Goal Calculator', path: '/savings-goal-calculator' },

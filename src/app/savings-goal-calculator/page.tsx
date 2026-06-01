@@ -3,6 +3,7 @@ import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
 import FinancialCard from '@/components/FinancialCard';
 import FormattedAmount from '@/components/FormattedAmount';
+import SavingsGoalArticle from '@/components/articles/SavingsGoalArticle';
 import { calculateSavingsGoal, generateSavingsGoalFAQs } from '@/lib/calculations/savings-goal';
 
 export default function SavingsGoalCalculator() {
@@ -22,6 +23,7 @@ export default function SavingsGoalCalculator() {
       description="Find out exactly how much you need to save each month to reach your financial goals. Compare scenarios across different investment return rates."
       path="/savings-goal-calculator"
       faqs={generateSavingsGoalFAQs()}
+      article={<SavingsGoalArticle />}
       relatedCalculators={[
         { title: 'Compound Interest Calculator', path: '/compound-interest-calculator' },
         { title: 'Retirement Savings Calculator', path: '/retirement-savings-calculator' },

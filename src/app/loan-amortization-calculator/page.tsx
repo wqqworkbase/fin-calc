@@ -3,6 +3,7 @@ import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
 import FinancialCard from '@/components/FinancialCard';
 import FormattedAmount from '@/components/FormattedAmount';
+import LoanArticle from '@/components/articles/LoanArticle';
 import { calculateAmortization, calculateEarlyPayoff, generateLoanFAQs } from '@/lib/calculations/loan-amortization';
 
 export default function LoanAmortizationCalculator() {
@@ -35,6 +36,7 @@ export default function LoanAmortizationCalculator() {
       description="Break down your loan payments by principal and interest. See your full amortization schedule and discover how extra payments can save thousands."
       path="/loan-amortization-calculator"
       faqs={generateLoanFAQs()}
+      article={<LoanArticle />}
       relatedCalculators={[
         { title: 'Compound Interest Calculator', path: '/compound-interest-calculator' },
         { title: 'APR to EAR Converter', path: '/apr-to-ear-calculator' },

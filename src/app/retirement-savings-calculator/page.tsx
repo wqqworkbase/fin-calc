@@ -3,6 +3,7 @@ import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
 import FinancialCard from '@/components/FinancialCard';
 import FormattedAmount from '@/components/FormattedAmount';
+import RetirementArticle from '@/components/articles/RetirementArticle';
 import { calculateRetirement, generateRetirementFAQs } from '@/lib/calculations/retirement-savings';
 
 export default function RetirementSavingsCalculator() {
@@ -34,6 +35,7 @@ export default function RetirementSavingsCalculator() {
       description="Plan your retirement with confidence. See how much you need to save, whether you are on track, and get personalized savings recommendations."
       path="/retirement-savings-calculator"
       faqs={generateRetirementFAQs()}
+      article={<RetirementArticle />}
       relatedCalculators={[
         { title: 'Compound Interest Calculator', path: '/compound-interest-calculator' },
         { title: 'Savings Goal Calculator', path: '/savings-goal-calculator' },

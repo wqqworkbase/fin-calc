@@ -1,0 +1,35 @@
+export default function LoanArticle() {
+  return (
+    <article className="prose prose-gray max-w-none text-sm leading-relaxed text-gray-600 space-y-5">
+      <h2 className="text-lg font-semibold text-gray-900 !mb-3">Understanding Loan Amortization: How Each Payment Works</h2>
+      <p>Most installment loans — mortgages, auto loans, student loans, personal loans — use <strong>amortization</strong>: a fixed monthly payment that covers both interest and principal. Early in the loan, most of your payment goes toward interest. Over time, the balance shifts, and more goes toward principal. Understanding this structure can save you thousands of dollars.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">How the Payment Split Works</h3>
+      <p>Every month, your lender calculates interest on the remaining balance and applies the rest of your payment to principal. Because the balance decreases each month, the interest portion shrinks, accelerating principal repayment. This is why extra payments early in the loan have the biggest impact.</p>
+
+      <div className="overflow-x-auto"><table className="w-full text-xs border-collapse"><thead><tr className="bg-gray-50"><th className="border border-gray-200 p-2 text-left">Payment #</th><th className="border border-gray-200 p-2 text-right">Monthly Payment</th><th className="border border-gray-200 p-2 text-right">Principal</th><th className="border border-gray-200 p-2 text-right">Interest</th><th className="border border-gray-200 p-2 text-right">Balance</th></tr></thead><tbody>
+        <tr><td className="border border-gray-200 p-2">1</td><td className="border border-gray-200 p-2 text-right">$1,896</td><td className="border border-gray-200 p-2 text-right">$271</td><td className="border border-gray-200 p-2 text-right">$1,625</td><td className="border border-gray-200 p-2 text-right">$299,729</td></tr>
+        <tr><td className="border border-gray-200 p-2">60 (5 yrs)</td><td className="border border-gray-200 p-2 text-right">$1,896</td><td className="border border-gray-200 p-2 text-right">$400</td><td className="border border-gray-200 p-2 text-right">$1,496</td><td className="border border-gray-200 p-2 text-right">$275,696</td></tr>
+        <tr><td className="border border-gray-200 p-2">180 (15 yrs)</td><td className="border border-gray-200 p-2 text-right">$1,896</td><td className="border border-gray-200 p-2 text-right">$859</td><td className="border border-gray-200 p-2 text-right">$1,037</td><td className="border border-gray-200 p-2 text-right">$190,591</td></tr>
+        <tr><td className="border border-gray-200 p-2">360 (30 yrs)</td><td className="border border-gray-200 p-2 text-right">$1,896</td><td className="border border-gray-200 p-2 text-right">$1,886</td><td className="border border-gray-200 p-2 text-right">$10</td><td className="border border-gray-200 p-2 text-right">$0</td></tr>
+      </tbody></table><p className="text-[10px] text-gray-400 mt-1">Example: $300,000 mortgage at 6.5% APR, 30-year fixed. Total interest paid: $382,633.</p></div>
+
+      <h3 className="text-base font-semibold text-gray-800">The Power of Extra Payments</h3>
+      <p>Adding even a small amount to each payment can dramatically reduce your total interest and loan term:</p>
+      <ul className="list-disc pl-5 space-y-1 text-xs">
+        <li><strong>+$100/month</strong> on the $300K loan above → saves <strong>$45,000 in interest</strong> and pays off 4.5 years early.</li>
+        <li><strong>+$300/month</strong> → saves <strong>$100,000+ in interest</strong> and pays off 10 years early.</li>
+        <li><strong>One extra payment per year</strong> (13 payments instead of 12) → shaves ~4 years off a 30-year mortgage.</li>
+      </ul>
+
+      <h3 className="text-base font-semibold text-gray-800">Monthly vs. Biweekly Payments</h3>
+      <p>Biweekly payments (half your monthly payment every two weeks) result in <strong>26 half-payments per year</strong>, equivalent to 13 full monthly payments. This automatic "13th payment" accelerates your amortization without feeling like extra money out of pocket. Many lenders offer biweekly plans, but always confirm there are no setup fees.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Fixed vs. Adjustable Rate</h3>
+      <ul className="list-disc pl-5 space-y-1 text-xs">
+        <li><strong>Fixed-rate:</strong> Rate stays constant for the entire term. Predictable, stable. Best when rates are low or you plan to stay long-term.</li>
+        <li><strong>ARM (Adjustable-Rate Mortgage):</strong> Lower initial rate that resets periodically (e.g., 5/1 ARM = fixed for 5 years, then adjusts annually). Riskier — your payment can increase significantly when rates rise.</li>
+      </ul>
+    </article>
+  );
+}

@@ -1,6 +1,7 @@
 'use client';
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
+import APREARArticle from '@/components/articles/APREARArticle';
 import { aprToEAR, earToDaily, earToMonthly, generateAPRFAQs } from '@/lib/calculations/apr-to-ear';
 
 export default function AprToEarCalculator() {
@@ -17,6 +18,7 @@ export default function AprToEarCalculator() {
       description="Convert Annual Percentage Rate (APR) to Effective Annual Rate (EAR). Understand the true cost of loans and true yield of investments with compounding."
       path="/apr-to-ear-calculator"
       faqs={generateAPRFAQs()}
+      article={<APREARArticle />}
       relatedCalculators={[
         { title: 'Loan Amortization Calculator', path: '/loan-amortization-calculator' },
         { title: 'Compound Interest Calculator', path: '/compound-interest-calculator' },
