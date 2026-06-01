@@ -2,6 +2,7 @@
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
 import { calculateCompoundInterest, generateCompoundInterestFAQs } from '@/lib/calculations/compound-interest';
+import { COMPOUND_FREQUENCIES } from '@/lib/constants';
 import CompoundInterestArticle from '@/components/articles/CompoundInterestArticle';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
