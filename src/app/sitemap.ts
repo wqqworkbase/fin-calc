@@ -4,6 +4,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://calculatefintax.com';
   const routes = [
     '/',
+    '/about',
+    '/terms',
+    '/privacy',
     '/compound-interest-calculator',
     '/retirement-savings-calculator',
     '/loan-amortization-calculator',

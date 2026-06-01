@@ -23,7 +23,7 @@ export default function AboutPage() {
 
           <div className="prose prose-gray max-w-none space-y-5 text-gray-600 leading-relaxed">
             <p>
-              Hi, I'm the founder and sole developer behind Calculator Financial &amp; Tax. I built this site
+              Hi, I&apos;m the developer of this site. I built Calculator Financial &amp; Tax
               because I believe everyone deserves quick, accurate, and free access to financial and tax
               calculations — no sign-ups, no paywalls, no data collection.
             </p>
