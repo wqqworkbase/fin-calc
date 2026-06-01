@@ -10,6 +10,7 @@ import FormattedAmount from '@/components/FormattedAmount';
 import { AD_SLOTS } from '@/lib/ad-config';
 import { calculateCompoundInterest, generateCompoundInterestFAQs } from '@/lib/calculations/compound-interest';
 import { COMPOUND_FREQUENCIES } from '@/lib/constants';
+import CompoundInterestArticle from '@/components/articles/CompoundInterestArticle';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const allCalculators = [
@@ -96,6 +97,10 @@ export default function Home() {
             </div>
 
             <AdUnit slot={AD_SLOTS.midContent.slot} format="rectangle" className="mb-6" />
+
+            <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
+              <CompoundInterestArticle />
+            </section>
 
             <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-5">Frequently Asked Questions</h2>
