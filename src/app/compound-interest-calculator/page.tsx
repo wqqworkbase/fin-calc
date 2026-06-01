@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
 import { calculateCompoundInterest, generateCompoundInterestFAQs } from '@/lib/calculations/compound-interest';
-import { COMPOUND_FREQUENCIES } from '@/lib/constants';
+import CompoundInterestArticle from '@/components/articles/CompoundInterestArticle';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 export default function CompoundInterestCalculator() {
@@ -32,6 +32,7 @@ export default function CompoundInterestCalculator() {
       description="Calculate how your investments grow with compound interest over time. See yearly breakdowns, visualize wealth growth, and experiment with different contribution strategies."
       path="/compound-interest-calculator"
       faqs={generateCompoundInterestFAQs()}
+      article={<CompoundInterestArticle />}
       relatedCalculators={[
         { title: 'Retirement Savings Calculator', path: '/retirement-savings-calculator' },
         { title: 'Savings Goal Calculator', path: '/savings-goal-calculator' },

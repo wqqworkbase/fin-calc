@@ -1,6 +1,7 @@
 'use client';
 import { useState, useMemo } from 'react';
 import CalculatorLayout from '@/components/CalculatorLayout';
+import TaxArticle from '@/components/articles/TaxArticle';
 import { calculateFederalTax } from '@/lib/calculations/tax/federal';
 import { calculateFICA, FICAResult } from '@/lib/calculations/tax/fica';
 import { calculateStateTax, ALL_STATES } from '@/lib/calculations/tax/states';
@@ -158,6 +159,7 @@ export default function USTaxCalculator() {
         { title: 'Savings Goal Calculator', path: '/savings-goal-calculator' },
         { title: 'Inflation Calculator', path: '/inflation-calculator' },
       ]}
+      article={<TaxArticle />}
       faqs={[
         {
           question: 'How accurate is this tax calculator?',

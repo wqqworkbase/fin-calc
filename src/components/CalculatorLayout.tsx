@@ -17,6 +17,7 @@ interface CalculatorLayoutProps {
   faqs?: FAQ[];
   children: React.ReactNode;
   relatedCalculators?: { title: string; path: string }[];
+  article?: React.ReactNode;
 }
 
 const allCalculators = [
@@ -40,6 +41,7 @@ export default function CalculatorLayout({
   faqs = [],
   children,
   relatedCalculators = [],
+  article,
 }: CalculatorLayoutProps) {
   return (
     <>
@@ -81,6 +83,12 @@ export default function CalculatorLayout({
             </div>
 
             <AdUnit slot={AD_SLOTS.midContent.slot} format="rectangle" className="mb-6" />
+
+            {article && (
+              <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
+                {article}
+              </section>
+            )}
 
             {faqs.length > 0 && (
               <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
