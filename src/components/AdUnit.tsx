@@ -9,13 +9,12 @@ interface AdUnitProps {
 
 export default function AdUnit({ slot, format = 'horizontal', className = '' }: AdUnitProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [failed, setFailed] = useState(false);
+  const [filled, setFilled] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || filled) return;
 
-    // Create ins element via vanilla DOM
     const ins = document.createElement('ins');
     ins.className = 'adsbygoogle';
     ins.style.display = 'block';
@@ -28,26 +27,39 @@ export default function AdUnit({ slot, format = 'horizontal', className = '' }: 
     try {
       const w = window as unknown as Record<string, any>;
       (w.adsbygoogle = w.adsbygoogle || []).push({});
-    } catch { /* AdSense not available */ }
+    } catch {}
 
-    // Check if ad filled after a delay
-    const timer = setTimeout(() => {
-      const filled = ins.clientHeight > 5 || ins.querySelector('iframe');
-      if (!filled) setFailed(true);
-    }, 1500);
-
-    return () => {
-      clearTimeout(timer);
-      // Only remove the ins if it's still a child
-      if (container.contains(ins)) {
-        container.removeChild(ins);
+    // Poll for ad fill
+    const check = () => {
+      const hasContent = ins.clientHeight > 5 || ins.querySelector('iframe');
+      if (hasContent) {
+        setFilled(true);
       }
     };
-  }, [slot]);
 
-  if (failed) return null;
+    const timer = setInterval(() => {
+      check();
+      if (filled) clearInterval(timer);
+    }, 300);
 
+    // Stop polling after 5s
+    const stop = setTimeout(() => { clearInterval(timer); check(); }, 5000);
+
+    return () => {
+      clearInterval(timer);
+      clearTimeout(stop);
+      if (container.contains(ins)) {
+        try { container.removeChild(ins); } catch {}
+      }
+    };
+  }, [slot, filled]);
+
+  // Only render something if ad actually filled
   return (
-    <div ref={containerRef} className={`w-full ${className}`} />
+    <div
+      ref={containerRef}
+      className={`w-full ${filled ? className : ''}`}
+      style={filled ? undefined : { height: 0, overflow: 'hidden' }}
+    />
   );
 }
