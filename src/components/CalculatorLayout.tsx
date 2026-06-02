@@ -61,13 +61,20 @@ export default function CalculatorLayout({
               ))}
             </nav>
           </div>
-          {/* Mobile nav — scrollable row below logo, above title */}
+          {/* Mobile nav — 2 rows of 4 below logo, above title */}
           <div className="lg:hidden border-t border-gray-50">
-            <nav className="max-w-6xl mx-auto px-4 py-2 flex gap-3 overflow-x-auto whitespace-nowrap scrollbar-hide text-xs font-medium">
-              {allCalculators.map((c) => (
-                <Link key={c.path} href={c.path} className="text-gray-500 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all flex-shrink-0">
-                  {c.title}
-                </Link>
+            <nav className="max-w-6xl mx-auto px-4 py-2 space-y-1.5">
+              {[allCalculators.slice(0, 4), allCalculators.slice(4, 8)].map((row, ri) => (
+                <div key={ri} className="flex justify-center gap-x-3 gap-y-0.5 flex-wrap text-xs font-medium">
+                  {row.map((c, i) => (
+                    <span key={c.path} className="flex items-center">
+                      {i > 0 && <span className="text-gray-200 mx-1.5 select-none">|</span>}
+                      <Link href={c.path} className="text-gray-500 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all whitespace-nowrap underline decoration-gray-300">
+                        {c.title}
+                      </Link>
+                    </span>
+                  ))}
+                </div>
               ))}
             </nav>
           </div>
