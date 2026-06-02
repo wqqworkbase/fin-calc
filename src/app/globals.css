@@ -22,3 +22,7 @@ input[inputMode="decimal"] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* Hide scrollbar for mobile nav */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

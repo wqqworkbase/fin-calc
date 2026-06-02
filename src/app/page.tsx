@@ -56,7 +56,16 @@ export default function Home() {
                 </span>
               ))}
             </nav>
-            <Link href="/us-tax-calculator" className="lg:hidden text-sm text-emerald-600 font-medium hover:underline">All Tools</Link>
+          </div>
+          {/* Mobile nav — scrollable row below logo, above title */}
+          <div className="lg:hidden border-t border-gray-50">
+            <nav className="max-w-6xl mx-auto px-4 py-2 flex gap-3 overflow-x-auto whitespace-nowrap text-xs font-medium">
+              {allCalculators.map((c) => (
+                <Link key={c.path} href={c.path} className="text-gray-500 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all flex-shrink-0">
+                  {c.title}
+                </Link>
+              ))}
+            </nav>
           </div>
           <div className="max-w-6xl mx-auto px-4 pb-3 text-center">
             <h1 className="text-lg md:text-2xl font-bold text-gray-900">Compound Interest Calculator</h1>
