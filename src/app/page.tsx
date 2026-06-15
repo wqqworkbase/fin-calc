@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <SEOHead title="Compound Interest Calculator" description="Free compound interest calculator." path="/" faqs={faqs} />
+      <SEOHead title="Compound Interest Calculator" description="Free compound interest calculator." path="/compound-interest-calculator" faqs={faqs} />
       <div className="min-h-screen bg-white">
         <header className="bg-white border-b border-gray-100">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
