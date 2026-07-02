@@ -15,6 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/inflation-calculator',
     '/cd-ladder-calculator',
     '/us-tax-calculator',
+    '/credit-card-payoff-calculator',
+    '/roi-calculator',
+    '/salary-to-hourly-calculator',
+    '/emergency-fund-calculator',
   ];
 
   return routes.map((route) => ({
