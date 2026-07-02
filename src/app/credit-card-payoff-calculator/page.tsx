@@ -11,10 +11,10 @@ export default function CreditCardPayoffCalculator() {
   const [apr, setApr] = useState(25);
   const [monthlyPayment, setMonthlyPayment] = useState(200);
   const [mode, setMode] = useState<'payment' | 'time'>('payment');
+  const [targetMonths, setTargetMonths] = useState(24);
 
   const result = useMemo(() => calculateCreditCardPayoff(balance, apr / 100, monthlyPayment), [balance, apr, monthlyPayment]);
-  const timeResult = useMemo(() => mode === 'time' ? calculateCreditCardPayoffTime(balance, apr / 100, targetMonths) : null, [balance, apr, targetMonths]);
-  const [targetMonths, setTargetMonths] = useState(24);
+  const timeResult = useMemo(() => mode === 'time' ? calculateCreditCardPayoffTime(balance, apr / 100, targetMonths) : null, [balance, apr, targetMonths, mode]);
 
   return (
     <CalculatorLayout title="Credit Card Payoff Calculator" description="See exactly how long it will take to pay off your credit card and how much interest you will pay. Compare different payment strategies."
