@@ -130,6 +130,24 @@ export default function Home() {
             <AdUnit slot={AD_SLOTS.lowerContent.slot} format="rectangle" className="mb-6" />
 
             <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Why Trust These Calculators</h2>
+              <div className="grid md:grid-cols-3 gap-4 text-xs text-gray-500 leading-relaxed">
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Privacy First</p>
+                  <p>All calculations run locally in your browser. Your financial data — income, savings, debts — never leaves your device. No accounts, no data collection, no tracking.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Transparent Math</p>
+                  <p>Every formula is shown on the page. Our data sources include IRS tax tables, BLS CPI-U inflation data, FDIC insurance limits, and Federal Reserve rate data.</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-700 mb-1">Free Forever</p>
+                  <p>No paywalls, no "pro" tiers, no sign-ups. These calculators are supported by advertising and will always remain freely accessible to everyone.</p>
+                </div>
+              </div>
+            </section>
+
+            <section className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-5 md:p-7 mb-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">More Free Financial Calculators</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2">{allCalculators.filter(c => c.path !== '/compound-interest-calculator').map((c) => (<Link key={c.path} href={c.path} className="text-gray-600 hover:text-emerald-600 hover:bg-emerald-50/50 text-sm py-2 px-3 rounded-xl transition-all font-medium">{c.title}</Link>))}</div>
             </section>
