@@ -34,6 +34,17 @@ export default function SavingsGoalArticle() {
 
       <h3 className="text-base font-semibold text-gray-800">Automate to Succeed</h3>
       <p>The single most effective savings strategy: <strong>automate it.</strong> Set up an automatic transfer from your checking account to your savings or investment account on payday — before you have a chance to spend the money. Behavioral economists call this "paying yourself first," and it consistently outperforms willpower-based approaches.</p>
+      <h3 className="text-base font-semibold text-gray-800">Real-World Example: Meet Sarah</h3>
+      <p>Sarah wants to buy a $350,000 home with a 20% down payment ($70,000) in 5 years. She has $15,000 already saved and earns 4.5% in a high-yield savings account. She needs to save approximately <strong>$900/month</strong> to hit her target. Sarah sets up an automatic transfer on payday and tracks her progress monthly.</p>
+      <p><strong>Alternative scenario:</strong> If Sarah extends her timeline to 7 years, her required monthly drops to <strong>$620/month</strong> — freeing up $280/month for other goals, while still reaching her target. Sometimes, patience is the most powerful tool in the savings toolkit. If she invests instead in a conservative 6% portfolio, the monthly drops further to $597.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Common Mistakes to Avoid</h3>
+      <ol className="list-decimal pl-5 space-y-1 text-xs">
+        <li><strong>Setting unrealistic timelines.</strong> Wanting to save $100,000 in 2 years on a $60,000 salary is mathematically impossible without extreme lifestyle changes. Use the calculator first, then set the timeline.</li>
+        <li><strong>Not accounting for inflation.</strong> A $50,000 goal 10 years from now needs to be more like $67,000 in future dollars (at 3% inflation). Build in a buffer.</li>
+        <li><strong>Putting short-term savings in the stock market.</strong> Money needed within 3 years should be in HYSA, CDs, or money market funds — not stocks. A 20% market drop right before you need the money can destroy your plans.</li>
+        <li><strong>Treating all savings goals equally.</strong> Prioritize: emergency fund first (3-6 months of expenses), then high-interest debt payoff, then long-term goals. Retirement beats vacation every time.</li>
+      </ol>
     </article>
   );
 }

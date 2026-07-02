@@ -58,6 +58,17 @@ export default function CompoundInterestArticle() {
       <p>
         A quick mental shortcut: divide 72 by your annual rate of return to estimate how many years it takes to double your money. At 7%, money doubles every <strong>10.3 years</strong> (72 / 7 ≈ 10.3). At 10%, it takes just <strong>7.2 years</strong>.
       </p>
+      <h3 className="text-base font-semibold text-gray-800">Real-World Example: Meet Alex</h3>
+      <p>Alex is 25, earning $60,000/year as a software developer. She starts investing $400/month in a low-cost S&P 500 index fund averaging 8% annually. By age 65, she will have approximately <strong>$1,271,000</strong> — having contributed only $192,000. That is over $1 million in compound growth.</p>
+      <p>What if she waits until 35? Starting the same $400/month at 35 yields only <strong>$547,000</strong> by 65. That 10-year delay cost her <strong>$724,000</strong> in lost compound growth — more than three times her total contributions.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Common Mistakes to Avoid</h3>
+      <ol className="list-decimal pl-5 space-y-1 text-xs">
+        <li><strong>Cashing out early.</strong> Withdrawing investments before they compound robs you of exponential growth in the later years — where the vast majority of gains occur.</li>
+        <li><strong>Chasing the highest rate.</strong> A "guaranteed" 10% return sounds better than 7% from index funds, but high-return products often carry hidden risks or fraud. Consistency beats speculation.</li>
+        <li><strong>Ignoring fees.</strong> A 1% management fee on a $500,000 portfolio costs $5,000/year — and the lost compounding on those fees over decades can exceed $200,000.</li>
+        <li><strong>Stopping contributions during market dips.</strong> When the market falls, your fixed monthly contribution buys more shares at lower prices — accelerating eventual recovery gains.</li>
+      </ol>
     </article>
   );
 }

@@ -34,6 +34,16 @@ export default function CDLadderArticle() {
 
       <h3 className="text-base font-semibold text-gray-800">When CD Laddering Shines Most</h3>
       <p>CD ladders are ideal when you have a lump sum you want to preserve (inheritance, bonus, house sale proceeds), you want higher returns than a savings account, and you can tolerate limited access for the first year while the ladder establishes. They are also excellent for retirees seeking predictable income with principal protection.</p>
+      <h3 className="text-base font-semibold text-gray-800">Real-World Example: Meet Margaret</h3>
+      <p>Margaret is 62 and just received a $50,000 inheritance. She wants safety plus income. She builds a 5-rung CD ladder ($10,000 each) with maturities spread across 6 months, 1 year, 2 years, 3 years, and 5 years. Her blended yield is 4.6%, earning approximately <strong>$2,300/year in guaranteed interest</strong>. Every time a CD matures, she has the option to spend the money or reinvest at current rates.</p>
+      <p><strong>Comparison:</strong> If Margaret put everything in a 5-year CD at 5.00%, she would earn slightly more but have zero access to her funds without penalties. The ladder gives her $10,000 of liquidity every 6-12 months while still earning near-5% on the bulk of her money.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Common Mistakes to Avoid</h3>
+      <ol className="list-decimal pl-5 space-y-1 text-xs">
+        <li><strong>Chasing the highest APY without checking lockup.</strong> A 5-year CD at 5.5% sounds great — until you need the money in year 2 and pay 6-12 months of interest as an early withdrawal penalty. Match the term to your actual horizon.</li>
+        <li><strong>Putting all emergency savings in CDs.</strong> Your true emergency fund should stay in a high-yield savings account. CDs supplement beyond that for money you KNOW you will not need before maturity.</li>
+        <li><strong>Forgetting to reinvest maturing CDs promptly.</strong> Many banks auto-renew CDs at much lower "standard" rates. Set calendar alerts and shop around each time a rung matures.</li>
+      </ol>
     </article>
   );
 }

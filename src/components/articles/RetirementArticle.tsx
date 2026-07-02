@@ -32,6 +32,17 @@ export default function RetirementArticle() {
 
       <h3 className="text-base font-semibold text-gray-800">Don't Forget Social Security</h3>
       <p>Social Security replaces approximately 40% of pre-retirement income for average earners. You can claim as early as age 62 (reduced benefits) or delay until age 70 (increased benefits). Full retirement age is 67 for those born after 1960. Use Social Security as a supplement, not your primary retirement plan.</p>
+      <h3 className="text-base font-semibold text-gray-800">Real-World Example: Meet David</h3>
+      <p>David is 40, earning $85,000/year with $80,000 already saved in his 401(k). He contributes 10% of his salary ($708/month) with a 3% employer match ($212/month). At 7% average return, he will have approximately <strong>$980,000</strong> by 65 — providing about $39,000/year at a 4% withdrawal rate. Combined with Social Security (~$27,000/year), that is $66,000/year — workable, but not luxurious.</p>
+      <p><strong>What if he boosts contributions to 15%?</strong> Adding an extra $354/month grows his nest egg to <strong>$1,230,000</strong> — an additional $250,000 from just $106,200 in extra contributions. That translates to $10,000 more per year in retirement.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Common Mistakes to Avoid</h3>
+      <ol className="list-decimal pl-5 space-y-1 text-xs">
+        <li><strong>Leaving free money on the table.</strong> Failing to contribute enough for the full employer match is turning down an immediate 50-100% return. Always max the match first.</li>
+        <li><strong>Underestimating healthcare costs.</strong> A 65-year-old couple retiring today should budget approximately $315,000 for out-of-pocket medical expenses in retirement (Fidelity estimate). Medicare does not cover everything.</li>
+        <li><strong>Claiming Social Security too early.</strong> Taking benefits at 62 instead of 70 reduces your monthly check by up to 45% — permanently. If you are healthy and can afford to wait, delay as long as possible (up to age 70).</li>
+        <li><strong>Using retirement accounts as emergency funds.</strong> Early withdrawals from 401(k)s and IRAs trigger taxes plus a 10% penalty. Maintain a separate 3-6 month emergency fund in a high-yield savings account.</li>
+      </ol>
     </article>
   );
 }

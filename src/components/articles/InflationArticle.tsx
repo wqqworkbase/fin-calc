@@ -35,6 +35,16 @@ export default function InflationArticle() {
         <li><strong>I-Bonds:</strong> U.S. savings bonds with an inflation-adjusted rate component. Currently yielding above 4%.</li>
         <li><strong>Commodities & Gold:</strong> Historically used as inflation hedges, though their track record is mixed and more volatile than stocks.</li>
       </ol>
+      <h3 className="text-base font-semibold text-gray-800">Real-World Example: Meet the Johnsons</h3>
+      <p>In 1995, the Johnson family bought a house for $150,000 in suburban Chicago. They sold it in 2025 for $420,000 — a $270,000 "profit." But adjusted for inflation (CPI-U), that $150,000 in 1995 is equivalent to <strong>$312,000 in 2025 dollars</strong>. Their real gain was about $108,000 — not $270,000. This is why understanding inflation-adjusted returns matters: for taxes, they owed capital gains on the full nominal gain, but for their actual wealth, only the real gain counts.</p>
+      <p>Lesson: always look at real (inflation-adjusted) returns, not nominal returns, when evaluating long-term investments.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Common Mistakes to Avoid</h3>
+      <ol className="list-decimal pl-5 space-y-1 text-xs">
+        <li><strong>Keeping too much cash.</strong> Money in a 0.01% checking account loses ~3% of purchasing power every year at average inflation. $10,000 in cash today will buy what $7,400 buys today in 10 years.</li>
+        <li><strong>Assuming all prices rise equally.</strong> Healthcare and education costs have historically risen faster than CPI (~5-6% annually), while electronics have fallen. Your personal inflation rate may differ from the national average.</li>
+        <li><strong>Ignoring inflation in retirement planning.</strong> A $60,000/year retirement budget today will need about $108,000/year in 20 years (at 3% inflation). Plan accordingly.</li>
+      </ol>
     </article>
   );
 }

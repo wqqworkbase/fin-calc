@@ -28,6 +28,16 @@ export default function APREARArticle() {
 
       <h3 className="text-base font-semibold text-gray-800">The Conversion Formula</h3>
       <p className="bg-gray-50 p-3 rounded-xl text-xs font-mono">EAR = (1 + APR / n)<sup>n</sup> − 1 &nbsp;&nbsp;where n = number of compounding periods per year</p>
+      <h3 className="text-base font-semibold text-gray-800">Real-World Example: Meet Mike</h3>
+      <p>Mike carries a $5,000 balance on a credit card with a "competitive" 24.99% APR. He pays $200/month. What most people do not realize: that 24.99% APR compounds monthly to an EAR of approximately <strong>28.07%</strong>. At this rate, Mike's payoff takes 32 months and costs <strong>$1,386 in interest</strong> alone.</p>
+      <p>Now consider Mike transfers his balance to a card offering 0% APR for 18 months with a 3% fee ($150). At $278/month, he pays it off with zero additional interest — saving over $1,200 compared to the original plan. Understanding the difference between APR and EAR made him $1,200 richer.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Common Mistakes to Avoid</h3>
+      <ol className="list-decimal pl-5 space-y-1 text-xs">
+        <li><strong>Comparing APRs across different compounding frequencies.</strong> A 5.00% APR compounded monthly has an EAR of 5.12%. A 5.00% APR compounded daily has an EAR of 5.13%. Always ask: "compounded how often?"</li>
+        <li><strong>Ignoring that credit cards compound daily.</strong> Your 29.99% credit card APR is actually a ~34.7% effective annual rate. That is the number you should have in mind when deciding whether to carry a balance.</li>
+        <li><strong>Assuming APR includes all costs.</strong> Mortgage APR includes certain fees, but credit card APR does not include annual fees, late fees, or balance transfer fees. Read the fine print.</li>
+      </ol>
     </article>
   );
 }

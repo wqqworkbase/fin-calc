@@ -30,6 +30,17 @@ export default function TaxArticle() {
 
       <h3 className="text-base font-semibold text-gray-800">Marginal vs. Effective Tax Rate</h3>
       <p>Your <strong>marginal tax rate</strong> is the rate on your last dollar earned — the highest bracket you reach. Your <strong>effective tax rate</strong> is your total tax divided by total income. A single filer earning $100,000 in 2025 has a 22% marginal rate but only about 13.4% effective federal rate, thanks to the standard deduction ($15,750) and lower brackets applied first.</p>
+      <h3 className="text-base font-semibold text-gray-800">Real-World Example: Meet Tom & Lisa</h3>
+      <p>Tom and Lisa file married-jointly with a combined income of $180,000 in California. Their federal marginal rate is 22%, but their effective federal rate is only 14.6%. However — state tax (CA, ~6.7% effective) plus FICA (7.65%) plus federal (14.6%) means their actual all-in tax rate is approximately <strong>28.9%</strong>. Of their $180,000 gross income, about <strong>$52,000</strong> goes to various taxes, leaving <strong>$128,000</strong> of take-home pay.</p>
+      <p><strong>Tax-saving move:</strong> If they each max out their 401(k) ($23,500 × 2 = $47,000 in 2025), their taxable income drops to $133,000 — saving approximately $10,340 in federal income tax alone, while building retirement wealth. Their take-home pay drops but their net worth grows faster.</p>
+
+      <h3 className="text-base font-semibold text-gray-800">Common Mistakes to Avoid</h3>
+      <ol className="list-decimal pl-5 space-y-1 text-xs">
+        <li><strong>Confusing marginal and effective rates.</strong> Being in the 24% bracket does not mean you pay 24% on all your income. You pay 10% on the first $11,925, 12% on the next $36,550, and so on. Your effective rate is always lower.</li>
+        <li><strong>Forgetting about the standard deduction.</strong> In 2025, a single filer gets a $15,750 standard deduction. That is $15,750 of income taxed at 0%. Many people overestimate their taxes by forgetting this.</li>
+        <li><strong>Overlooking state and local taxes when relocating.</strong> Moving from Texas (0% state tax) to California (up to 13.3%) on a $150,000 salary adds approximately $8,500+ in annual state tax. Factor this into salary negotiations.</li>
+        <li><strong>Not adjusting W-4 withholdings after life changes.</strong> Marriage, a new child, or a second job all change your tax situation. Update your W-4 within 10 days of a life event to avoid a surprise bill (or an interest-free loan to the government).</li>
+      </ol>
     </article>
   );
 }
