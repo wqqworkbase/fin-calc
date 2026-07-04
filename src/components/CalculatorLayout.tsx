@@ -1,6 +1,7 @@
 import SEOHead from './SEOHead';
 import AdUnit from './AdUnit';
 import SiteLogo from './SiteLogo';
+import CalculatorNav from './CalculatorNav';
 import MoneyBackground from './MoneyBackground';
 import { AD_SLOTS } from '@/lib/ad-config';
 import Link from 'next/link';
@@ -20,24 +21,6 @@ interface CalculatorLayoutProps {
   article?: React.ReactNode;
 }
 
-const allCalculators = [
-  { title: 'Compound Interest', path: '/compound-interest-calculator' },
-  { title: 'Loan', path: '/loan-amortization-calculator' },
-  { title: 'Tax', path: '/us-tax-calculator' },
-  { title: 'Credit Card', path: '/credit-card-payoff-calculator' },
-  { title: 'Retirement', path: '/retirement-savings-calculator' },
-  { title: 'APR → EAR', path: '/apr-to-ear-calculator' },
-  { title: 'Savings Goal', path: '/savings-goal-calculator' },
-  { title: 'Emergency Fund', path: '/emergency-fund-calculator' },
-  { title: 'ROI / CAGR', path: '/roi-calculator' },
-  { title: 'Salary to Hourly', path: '/salary-to-hourly-calculator' },
-  { title: 'Inflation', path: '/inflation-calculator' },
-  { title: 'CD Ladder', path: '/cd-ladder-calculator' },
-];
-
-const navLinkClass =
-  'text-gray-600 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all text-sm font-medium whitespace-nowrap';
-
 export default function CalculatorLayout({
   title,
   description,
@@ -54,33 +37,7 @@ export default function CalculatorLayout({
         <header className="bg-white border-b border-gray-100">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <SiteLogo />
-            <nav className="hidden lg:flex items-center gap-0.5 text-sm font-medium">
-              {allCalculators.map((c, i) => (
-                <span key={c.path} className="flex items-center">
-                  {i > 0 && <span className="text-gray-200 mx-1 select-none">|</span>}
-                  <Link href={c.path} className={navLinkClass}>
-                    {c.title}
-                  </Link>
-                </span>
-              ))}
-            </nav>
-          </div>
-          {/* Mobile nav — 2 rows of 4 below logo, above title */}
-          <div className="lg:hidden border-t border-gray-50">
-            <nav className="max-w-6xl mx-auto px-4 py-2 space-y-1.5">
-              {[allCalculators.slice(0, 4), allCalculators.slice(4, 8), allCalculators.slice(8, 12)].map((row, ri) => (
-                <div key={ri} className="flex justify-center gap-x-3 gap-y-0.5 flex-wrap text-xs font-medium">
-                  {row.map((c, i) => (
-                    <span key={c.path} className="flex items-center">
-                      {i > 0 && <span className="text-gray-200 mx-1.5 select-none">|</span>}
-                      <Link href={c.path} className="text-gray-500 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all whitespace-nowrap underline decoration-gray-300">
-                        {c.title}
-                      </Link>
-                    </span>
-                  ))}
-                </div>
-              ))}
-            </nav>
+            <CalculatorNav />
           </div>
         </header>
 
