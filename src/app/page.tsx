@@ -12,6 +12,7 @@ import { calculateCompoundInterest, generateCompoundInterestFAQs } from '@/lib/c
 import { COMPOUND_FREQUENCIES } from '@/lib/constants';
 import CompoundInterestArticle from '@/components/articles/CompoundInterestArticle';
 import CalculatorNav, { allCalculators } from '@/components/CalculatorNav';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const faqs = generateCompoundInterestFAQs();
 
