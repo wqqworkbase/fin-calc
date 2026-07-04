@@ -19,33 +19,21 @@ const allCalculators = [
 
 export { allCalculators };
 
-const linkClass = 'text-gray-600 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all text-xs sm:text-sm font-medium whitespace-nowrap';
+const linkClass = 'text-gray-600 hover:text-emerald-600 hover:underline underline-offset-4 decoration-emerald-300/50 transition-all text-xs font-semibold whitespace-nowrap';
 
 export default function CalculatorNav() {
   const [expanded, setExpanded] = useState(false);
-
-  // Desktop: 3 rows of 4
-  const desktopRows = [allCalculators.slice(0, 4), allCalculators.slice(4, 8), allCalculators.slice(8, 12)];
-
-  // Mobile: first 8 always visible, last 4 only when expanded
   const visibleItems = expanded ? allCalculators : allCalculators.slice(0, 8);
 
   return (
     <>
-      {/* Desktop — 3 rows, all visible */}
-      <nav className="hidden lg:block">
-        <div className="space-y-1">
-          {desktopRows.map((row, ri) => (
-            <div key={ri} className="flex justify-end gap-x-2 gap-y-0.5 flex-wrap">
-              {row.map((c, i) => (
-                <span key={c.path} className="flex items-center">
-                  {i > 0 && <span className="text-gray-200 mx-1.5 select-none">|</span>}
-                  <Link href={c.path} className={linkClass}>{c.title}</Link>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
+      {/* Desktop — 3 rows of 4 columns, evenly distributed */}
+      <nav className="hidden lg:grid grid-cols-4 gap-x-4 gap-y-1.5 flex-1" style={{ maxWidth: '520px', marginLeft: 'auto' }}>
+        {allCalculators.map((c, i) => (
+          <span key={c.path} className="flex items-center justify-center">
+            <Link href={c.path} className={linkClass}>{c.title}</Link>
+          </span>
+        ))}
       </nav>
 
       {/* Mobile — 2 rows of 4, expandable to 3 rows */}
